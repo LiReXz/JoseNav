@@ -9,6 +9,10 @@ const toggleBar = document.getElementById('toggle-bar');
 const sunPosition = 2.5; // Posición del sol
 const moonPosition = 14; // Posición de la luna
 
+// Establece el punto deslizante al principio en la luna (dark mode)
+sliderPoint.style.left = `${moonPosition}px`;
+body.classList.add('dark-mode'); // Inicia en dark mode
+
 // Función para cambiar el tema (modo claro/oscuro)
 const toggleTheme = () => {
   body.classList.toggle('dark-mode'); // Cambia entre dark-mode y light-mode

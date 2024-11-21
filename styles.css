@@ -202,7 +202,6 @@ header .logo {
     background-color: #252734; /* Color de fondo para modo oscuro */
     color: white; /* Color del texto para modo oscuro */
   }
-  
   body.light-mode {
     background-color: #c7d8f1; /* Color de fondo para modo oscuro */
     color: rgb(0, 0, 0); /* Color del texto para modo oscuro */
