@@ -1,6 +1,11 @@
 * {
     box-sizing: border-box;
 }
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evitar el desbordamiento horizontal */
+}
 body {
     margin-left: 12.5rem; /* 200px */
     margin-right: 12.5rem; /* 200px */
@@ -12,30 +17,59 @@ body {
     overflow-x: hidden;
     max-width: 100%; /* Evita el desbordamiento */
 }
+@media screen and (max-width: 1024px) {
+    body {
+        margin-left: 8rem; /* Reducir márgenes para tabletas y dispositivos más pequeños */
+        margin-right: 8rem;
+    }
+
+    .theme-toggle-container {
+        left: 2rem; /* Ajustar la posición del interruptor en pantallas más pequeñas */
+    }
+
+    .header-buttons {
+        padding: 1.2rem; /* Reducir el padding de los botones del header */
+    }
+
+    .nav-list {
+        margin-left: 2rem; /* Reducir margen de la lista de navegación */
+        gap: 2rem; /* Reducir el gap */
+    }
+
+    .logo {
+        height: 3.2rem; /* Ajustar el tamaño de la logo */
+    }
+
+    header.scrolled {
+        height: 5rem; /* Ajustar la altura del header fijo */
+    }
+}
+
 @media screen and (max-width: 768px) {
     body {
-        margin-left: 2rem; /* Reducir márgenes en pantallas pequeñas */
+        margin-left: 2rem; /* Reducir los márgenes aún más en pantallas móviles */
         margin-right: 2rem;
     }
 
     .theme-toggle-container {
-        left: 3rem; /* Ajustar la posición del interruptor */
+        left: 2rem; /* Ajustar la posición del interruptor */
     }
 
     .header-buttons {
-        padding: 1rem; /* Reducir el padding de los botones del header */
+        padding: 1rem; /* Reducir el padding */
     }
 
     .nav-list {
-        margin-left: 1rem; /* Reducir margen de la lista de navegación */
+        margin-left: 1rem; /* Reducir margen de la lista */
         gap: 1.5rem; /* Reducir el gap */
     }
 
     .logo {
         height: 2.5rem; /* Ajustar el tamaño de la logo */
     }
+
     header.scrolled {
-        height: 4.5rem; /* Ajustar la altura del header fijo en móviles */
+        height: 4.5rem; /* Ajuste de la altura para el header fijo en móviles */
     }
 }
 header {
