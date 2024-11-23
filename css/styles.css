@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     margin-left: 12.5rem; /* 200px */
     margin-right: 12.5rem; /* 200px */
@@ -9,7 +12,32 @@ body {
     overflow-x: hidden;
     max-width: 100%; /* Evita el desbordamiento */
 }
+@media screen and (max-width: 768px) {
+    body {
+        margin-left: 2rem; /* Reducir márgenes en pantallas pequeñas */
+        margin-right: 2rem;
+    }
 
+    .theme-toggle-container {
+        left: 3rem; /* Ajustar la posición del interruptor */
+    }
+
+    .header-buttons {
+        padding: 1rem; /* Reducir el padding de los botones del header */
+    }
+
+    .nav-list {
+        margin-left: 1rem; /* Reducir margen de la lista de navegación */
+        gap: 1.5rem; /* Reducir el gap */
+    }
+
+    .logo {
+        height: 2.5rem; /* Ajustar el tamaño de la logo */
+    }
+    header.scrolled {
+        height: 4.5rem; /* Ajustar la altura del header fijo en móviles */
+    }
+}
 header {
     padding-left: 10.67rem; /* 172px */
     padding-right: 10.67rem; /* 172px */
