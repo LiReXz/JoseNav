@@ -7,9 +7,18 @@ const body = document.body;
 const toggleBar = document.getElementById('toggle-bar');
 const favicon = document.getElementById('favicon'); // Obtener el elemento del favicon
 
-// Configuración de posiciones del slider
-const sunPosition = 2.5;  // Posición del sol (modo claro)
-const moonPosition = 14;  // Posición de la luna (modo oscuro)
+// Configuración de posiciones del slider en rem (1rem = 16px por defecto)
+const sunPosition = 2.5;  // 2.5rem (equivalente a 40px si 1rem = 16px)
+const moonPosition = 17;  // 14rem (equivalente a 224px si 1rem = 16px)
+
+// Definición de la raíz en base a la resolución de 1920px (1920px / 16 = 120rem)
+const baseFontSize = 16; // Asumiendo que el tamaño base en rem es 16px
+const baseWidth = 1920;  // Resolución base del contenedor
+
+// Definimos las posiciones en función de la proporción del contenedor
+const calculatePositionInRem = (positionPx) => {
+  return (positionPx / baseWidth) * 100; // Calculamos el porcentaje de la posición en relación con el contenedor
+};
 
 // Centralización de rutas para imágenes y otros recursos
 const assets = {
@@ -21,6 +30,14 @@ const assets = {
     dark: './media/logo-url-dark.png',
     light: './media/logo-url-light.png'
   },
+  homelogo: {
+    dark: './media/logo-dark.png',
+    light: './media/logo-light.png'
+  },
+  homelogoshadow: {
+    dark: './media/logo-shadow-dark.png',
+    light: './media/logo-shadow-light.png'
+  }
   // FUTURAS IMÁGENES (Agregar más recursos aquí)
   // Por ejemplo:
   // background: {
@@ -30,7 +47,7 @@ const assets = {
 };
 
 // Forzar modo oscuro al cargar la página
-sliderPoint.style.left = `${moonPosition}px`; // Posicionar el punto en la luna
+sliderPoint.style.left = `${calculatePositionInRem(moonPosition)}rem`; // Posicionar el punto en la luna
 body.classList.add('dark-mode'); // Activar modo oscuro por defecto
 localStorage.setItem('mode', 'dark'); // Sobrescribir el modo en localStorage
 
@@ -45,6 +62,13 @@ const updateThemeAssets = () => {
   // Actualizar el favicon
   favicon.href = isDarkMode ? assets.favicon.dark : assets.favicon.light;
 
+
+  // Actualizar el home-logo
+  const homelogo = document.querySelector('.home-logo');
+  homelogo.src = isDarkMode ? assets.homelogo.dark : assets.homelogo.light;
+  // Actualizar el home-logo-shadow
+  const homelogoshadow = document.querySelector('.home-logo-shadow');
+  homelogoshadow.src = isDarkMode ? assets.homelogoshadow.dark : assets.homelogoshadow.light;
   // FUTURAS ACTUALIZACIONES DE IMÁGENES
   // Aquí puedes actualizar otras imágenes, fondos, iconos, etc.
   // Por ejemplo:
@@ -68,7 +92,7 @@ const toggleTheme = () => {
 
 // Función para mover el slider y cambiar el tema
 const moveSlider = (position) => {
-  sliderPoint.style.left = `${position}px`; // Mueve el punto del slider
+  sliderPoint.style.left = `${calculatePositionInRem(position)}rem`; // Mueve el punto del slider en rem
   if (position === sunPosition) {
     body.classList.remove('dark-mode');
     body.classList.add('light-mode');
