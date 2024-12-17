@@ -4,16 +4,6 @@ html {
 * {
     box-sizing: border-box;
 }
-body {
-    margin-left: 12.5rem; 
-    margin-right: 12.5rem; 
-    font-family: 'Inconsolata';
-    font-weight: 450;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    max-width: 100%; /* Evita el desbordamiento */
-}
 header {
     padding-left: 10.67rem;
     padding-right: 10.67rem;
@@ -234,6 +224,15 @@ header .logo {
 .dark-mode .sun-icon {
   color: #8da3af;
 }
+body {
+  margin-left: 12.5rem; 
+  margin-right: 12.5rem; 
+  font-family: 'Inconsolata';
+  font-weight: 450;
+  margin: 0;
+  padding: 0;
+  max-width: 100%; /* Evita el desbordamiento */
+}
 body.dark-mode {
   background-color: #252734;
   color: white;
@@ -288,12 +287,101 @@ body.scrolled .introduction {
   margin-top: 3.5rem;
   margin-left: 11rem;
   margin-right: 75rem;
-  text-align: justify;
+  text-align: left;
   line-height: 1.5;
+  font-size: 1.113rem;
 }
 .dark-mode .presentation {
-  color: #cacaca;
+  color: #8da3af;
 }
 .light-mode .presentation {
-  color: #303030;
+  color: #556269;
 }
+.experience {
+  margin-left: 11rem;
+  margin-right: 11rem;
+  white-space: nowrap;
+}
+.experience h1 {
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 2rem;
+}
+.experience-line {
+  padding-top: 0rem;
+  width: 0.2rem;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dark-mode .experience-line {
+  background-color: #8da3af;
+}
+.light-mode .experience-line {
+  background-color: #556269;
+}
+.experience-item-main, .experience-item-sub {
+  position: relative; /* Permite que el punto y texto se posicionen respecto al contenedor */
+  display: flex; /* Para alinear punto y texto en línea horizontal */
+  align-items: center; /* Centra verticalmente el texto con el punto */
+  margin-bottom: 4rem; /* Espaciado entre puntos */
+  width: 100%; /* Asegura que el contenedor abarque toda la línea */
+}
+.experience-dot-main, .experience-dot-sub {
+  border-radius: 50%; /* Hace que el punto sea un círculo */
+  flex-shrink: 0; /* Evita que el punto cambie de tamaño */
+  position: absolute; /* Posiciona el punto dentro del flujo de la línea */
+  left: 50%; /* Centra horizontalmente el punto dentro de la línea */
+  transform: translateX(-50%); /* Ajusta el centrado real */
+  margin-top: -1rem;
+}
+.experience-dot-main {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.experience-dot-sub {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+.dark-mode .experience-dot-main {
+  background-color: #7fff00;
+}
+.light-mode .experience-dot-main {
+  background-color: #F4A261;
+}
+.dark-mode .experience-dot-sub {
+  background-color: white;
+}
+.light-mode .experience-dot-sub {
+  background-color: black;
+}
+.experience-text-main, .experience-text-sub {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  margin-left: 1.5rem; /* Espaciado entre punto y texto */
+  color: inherit; /* Hereda el color del contenedor */
+  white-space: nowrap; /* Evita que el texto se corte */
+  margin-top: -1.1rem;
+}
+.experience-text-main {
+  font-size: 1rem;
+}
+.experience-text-sub {
+  font-size: 0,6rem;
+}
+.dark-mode .experience-text-main {
+  color: #7fff00;
+}
+.light-mode .experience-text-main {
+  color: #F4A261;
+}
+.dark-mode .experience-text-sub {
+  color: white;
+}
+.light-mode .experience-text-sub {
+  color: black;
+}
+/*dark-mode color: #8da3af*/
+/*light-mode color: #556269*/

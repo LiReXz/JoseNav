@@ -4,32 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>José Navarro Pavón - DevOps</title>
-    <link rel="icon" href="media/logo-url.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
+    <link id="favicon" rel="icon" href="media/logo-url-dark.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="dark-mode">
      <header id="header">
-        
         <a href="home.html" class="logo-link">
-            <img src="./media/logo-url.png" class="logo">
+            <img src="./media/logo-url-dark.png" class="logo">
         </a>
         <div class="header-buttons">
             <nav>
                 <ul class="nav-list">
                     <li><a href="./home.html">Home</a></li>
-                    <li><a href="./labs.html">Labs</a></li>
+                    <li><a href="./laboratories.html">Laboratories</a></li>
                     <li><a href="./collaborations.html">Collaborations</a></li>
                     <li><a href="./cv.html">CV</a></li>
                     <li class="active"><a href="./contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <div class="theme-toggle-container">
+                <i class="fas fa-sun sun-icon"></i> <!-- Icono de sol -->
+                <div class="moving-bar" id="toggle-bar">
+                  <div class="slider-point"></div> <!-- El punto deslizante -->
+                </div>
+                <i class="fas fa-moon moon-icon"></i> <!-- Icono de luna -->
+            </div>
         </div>
     </header>
+    <div style="height: 9.375rem;"></div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="hola">
-        <h1>hola</h1>
+        <h1>hola</h1><img src="./media/logo-dark.png">
     </div>
     <div style="height: 2000px;">a</div>
     <!-- <div class="cv-link">
@@ -53,5 +65,6 @@
     <!-- <footer>
         <p>Contact: <a href="mailto:josenav3547@gmail.com">josenav3547@gmail.com</a></p>
     </footer> -->
-    <script src="script.js"></script>
+    <script src="./scripts/scroll.js"></script>
+    <script src="./scripts/theme.js"></script>
 </body>
