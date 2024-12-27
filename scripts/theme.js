@@ -23,20 +23,20 @@ const calculatePositionInRem = (positionPx) => {
 // Centralización de rutas para imágenes y otros recursos
 const assets = {
   logo: {
-    dark: './media/logo-url-dark.png',
-    light: './media/logo-url-light.png'
+    dark: '../media/logo-url-dark.png',
+    light: '../media/logo-url-light.png'
   },
   favicon: {
-    dark: './media/logo-url-dark.png',
-    light: './media/logo-url-light.png'
+    dark: '../media/logo-url-dark.png',
+    light: '../media/logo-url-light.png'
   },
   homelogo: {
-    dark: './media/logo-dark.png',
-    light: './media/logo-light.png'
+    dark: '../media/logo-dark.png',
+    light: '../media/logo-light.png'
   },
   homelogoshadow: {
-    dark: './media/logo-shadow-dark.png',
-    light: './media/logo-shadow-light.png'
+    dark: '../media/logo-shadow-dark.png',
+    light: '../media/logo-shadow-light.png'
   }
   // FUTURAS IMÁGENES (Agregar más recursos aquí)
   // Por ejemplo:

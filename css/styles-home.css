@@ -1,261 +1,8 @@
-html {
-    font-size: 0.834vw;
-}
-* {
-    box-sizing: border-box;
-}
-.image-link {
-  display: block; /* Hace que el enlace sea un bloque */
-  width: 100%; /* El enlace ocupa todo el ancho del contenedor */
-}
-header {
-    padding-left: 10.67rem;
-    padding-right: 10.67rem;
-    display: flex;
-    position: relative;
-    height: 6.25rem;
-    width: 100%;
-    align-items: center;
-    z-index: 10;
-    overflow: hidden;
-    transition: background-color 0.5s ease-in-out;
-    backdrop-filter: blur(0.25rem);
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-.light-mode .header {
-    background-color: #c7d8f1;
-    color: rgb(0, 0, 0);
-}
-.dark-mode .header {
-    background-color: #25273400;
-    color: white;
-}
-header::before {
-    content: "";
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.5;
-    height: 5rem; 
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.5s ease-in-out;
-    z-index: -1;
-}
-.light-mode header::before {
-  background-color:#a4aae0;
-}
-.dark-mode header::before {
-  background-color:#5e6283;
-}
-header.scrolled::before {
-    width: 100%;
-    transform: scaleY(1);
-    height: 6.25rem;
-}
-header.scrolled {
-    width: 100%;
-    position: fixed;
-    height: 4rem;
-}
-header .logo {
-    height: 3.375rem;
-    position: relative;
-    text-align: left;
-}
-.header-buttons {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1.25rem;
-    right: 0px;
-}
-.light-mode .header-buttons {
-    color: #969494;
-}
-.dark-mode .header-buttons {
-    color: white;
-}
-.nav-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin-left: 2.5rem;
-    gap: 3.125rem;
-}
-.nav-list li {
-    font-size: 1rem;
-    position: relative;
-    overflow: hidden;
-}
-.nav-list a {
-    text-decoration: none;
-    padding: 0.3125rem 0.625rem;
-    display: inline-block;
-    position: relative;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-.light-mode .nav-list a {
-  color: #556269;
-}
-.dark-mode .nav-list a {
-  color: #8da3af;
-}
-.nav-list a:hover {
-    transform: translateX(0.625rem);
-}
-.light-mode .nav-list a:hover {
-  color: #000000;
-}
-.dark-mode .nav-list a:hover {
-  color: #ffffff;
-}
-.nav-list li::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0.375rem;
-    transform: translate(-50%, -50%) scale(0);
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-    z-index: -1;
-}
-.light-mode .nav-list li::before {
-  background-color: #F4A261;
-}
-.dark-mode .nav-list li::before {
-  background-color: #7fff00;
-}
-.nav-list li:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-    width: 0.5625rem;
-    height: 0.5625rem;
-}
-.nav-list li.active a {
-    transform: translateX(0.625rem);
-    font-weight: bold;
-}
-.light-mode .nav-list li.active a {
-  color: #000000;
-}
-.dark-mode .nav-list li.active a {
-  color: #ffffff;
-}
-.nav-list li.active:hover a {
-    transform: translateX(0.625rem);
-}
-.light-mode .nav-list li.active:hover a {
-  color: #4A4A4A;
-}
-.dark-mode .nav-list li.active:hover a {
-  color: #ffffff;
-}
-.nav-list li.active::before {
-  transform: translate(-50%, -50%) scale(1);
-  width: 0.5625rem;
-  height: 0.5625rem;
-}
-.light-mode .nav-list li.active::before {
-  background-color: #F4A261;
-}
-.dark-mode .nav-list li.active::before {
-  background-color: #7fff00;
-}
-.nav-list li.active:hover::before {
-  transform: translate(-50%, -50%) scale(1);
-}
-.theme-toggle-container {
-  width: 6.25rem;
-  height: 3.125rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  left: 56.25rem;
-  cursor: pointer;
-} 
-.moving-bar {
-  width: 1.875rem;
-  height: 1rem;
-  background-color: #8da3af;
-  position: relative;
-  border-radius: 0.625rem;
-  transition: background-color 0.3s ease;
-}
-.slider-point {
-  width: 0.875rem;
-  height: 0.875rem;
-  background-color: #fff;
-  border-radius: 50%;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: left 0.3s ease;
-}
-.sun-icon, .moon-icon {
-  font-size: 1.25rem; 
-}
-.sun-icon {
-  position: relative;
-  font-size: 1.25rem;
-  left: 0.625rem;
-  top: -0.0625rem;
-}
-.moon-icon {
-  position: relative;
-  font-size: 1.25rem;
-  right: 0.625rem;
-  top: -0.0625rem;
-}
-.light-mode .sun-icon {
-  color: #F4A261;
-}
-.light-mode .moon-icon {
-  color: #8da3af;
-}
-.dark-mode .moon-icon {
-  color: #7fff00;
-}
-.dark-mode .sun-icon {
-  color: #8da3af;
-}
-body {
-  margin-left: 12.5rem; 
-  margin-right: 12.5rem; 
-  font-family: 'Inconsolata';
-  font-weight: 450;
-  margin: 0;
-  padding: 0;
-  max-width: 100%; /* Evita el desbordamiento */
-}
-body.dark-mode {
-  background-color: #252734;
-  color: white;
-}
-body.light-mode {
-  background-color: #A3CFF7;
-  color: rgb(0, 0, 0);
-}
-.introduction{
+.introduction {
   margin-left: 11rem;
   margin-right: 75rem;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 500;
-  font-size: 4rem;
   text-align: left;
   white-space: nowrap;
-}
-body.scrolled .introduction {
-  margin-top: 6.25rem;
 }
 .home-logo {
   position: absolute;
@@ -324,8 +71,8 @@ body.scrolled .introduction {
 .timeline {
   position: relative;
   width: 100%;
-  height: 35rem;
-  max-width: 37.5rem; /* 600px convertido a rem */
+  height: 43.75rem;
+  max-width: 46.875rem; /* 600px convertido a rem */
   margin: 0 auto;
 }
 /* Línea central */
@@ -335,9 +82,9 @@ body.scrolled .introduction {
   top: 0;
   left: 50%; /* Alinea la línea central al 50% */
   transform: translateX(-50%); /* Centra la línea */
-  width: 0.25rem; /* 4px convertido a rem */
-  height: 25rem;
-  margin-top: 0.3rem;
+  width: 0.3125rem; /* 4px convertido a rem */
+  height: 31.25rem;
+  margin-top: 0.375rem;
 }
 .dark-mode .timeline::before {
   background-color: #8da3af;
@@ -351,8 +98,8 @@ body.scrolled .introduction {
   align-items: center;
   position: relative;
   width: 100%;
-  height: 20rem;
-  gap: 1rem;
+  height: 25rem;
+  gap: 1.25rem;
 }
 
 /* Punto grande (empresa) */
@@ -360,8 +107,8 @@ body.scrolled .introduction {
   position: absolute;
   top: 0%; /* Ajustado al centro vertical */
   left: 50%; /* Centrado en el eje horizontal */
-  width: 1rem; /* Tamaño del punto */
-  height: 1rem; /* Tamaño del punto */
+  width: 1.25rem; /* Tamaño del punto */
+  height: 1.25rem; /* Tamaño del punto */
   border-radius: 50%; /* Forma circular */
   transform: translate(-50%, -50%); /* Ajuste del punto para que se centre correctamente */
 }
@@ -375,10 +122,10 @@ body.scrolled .introduction {
   display: flex;
   position: absolute;
   top: 0%; /* Alineación vertical */
-  left: calc(50% + 1.1rem); /* Coloca el texto a la derecha del punto */
+  left: calc(50% + 1.375rem); /* Coloca el texto a la derecha del punto */
   transform: translateY(-50%); /* Ajusta la alineación vertical */
   font-family: 'Oswald', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.875rem;
 }
 .dark-mode .company-text  {
   color: #7fff00;
@@ -389,18 +136,18 @@ body.scrolled .introduction {
 .company-time {
   display: flex;
   position: absolute;
-  top: 1.4rem; /* Alineación vertical */
-  left: calc(50% + 1.1rem); /* Coloca el texto a la derecha del punto */
+  top: 1.75rem; /* Alineación vertical */
+  left: calc(50% + 1.375rem); /* Coloca el texto a la derecha del punto */
   transform: translateY(-50%); /* Ajusta la alineación vertical */
-  font-size: .75rem;
+  font-size: 0.9375rem;
 }
 .company-location {
   display: flex;
   position: absolute;
-  top: 2.4rem; /* Alineación vertical */
-  left: calc(50% + 1.1rem); /* Coloca el texto a la derecha del punto */
+  top: 3rem; /* Alineación vertical */
+  left: calc(50% + 1.375rem); /* Coloca el texto a la derecha del punto */
   transform: translateY(-50%); /* Ajusta la alineación vertical */
-  font-size: .75rem;
+  font-size: 0.9375rem;
 }
 .dark-mode .company-location {
   color: #8da3af;
@@ -414,15 +161,15 @@ body.scrolled .introduction {
   height: 100%;
   display: flex;
   align-items: center;
-  margin-top: 10rem;
+  margin-top: 12.5rem;
   position: relative;
 }
 .position-point {
   position: absolute;
   top: 0%; /* Ajustado al centro vertical */
   left: 50%; /* Centrado en el eje horizontal */
-  width: 0.6rem; /* Tamaño del punto */
-  height: 0.6rem; /* Tamaño del punto */
+  width: 0.75rem; /* Tamaño del punto */
+  height: 0.75rem; /* Tamaño del punto */
   border-radius: 50%; /* Forma circular */
   transform: translate(-50%, -50%); /* Ajuste del punto para que se centre correctamente */
 }
@@ -437,26 +184,26 @@ body.scrolled .introduction {
   display: flex;
   position: absolute;
   top: 0%; /* Alineación vertical */
-  left: calc(50% + 1.1rem); /* Coloca el texto a la derecha del punto */
+  left: calc(50% + 1.375rem); /* Coloca el texto a la derecha del punto */
   transform: translateY(-50%); /* Ajusta la alineación vertical */
   font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 .position-time {
   display: flex;
   position: absolute;
-  top: 1.2rem; /* Alineación vertical */
-  left: calc(50% + 1.1rem); /* Coloca el texto a la derecha del punto */
+  top: 1.5rem; /* Alineación vertical */
+  left: calc(50% + 1.375rem); /* Coloca el texto a la derecha del punto */
   transform: translateY(-50%); /* Ajusta la alineación vertical */
-  font-size: .75rem;
+  font-size: 0.9375rem;
 }
 .position-location {
   display: flex;
   position: absolute;
-  top: 2.2rem; /* Alineación vertical */
-  left: calc(50% + 1.1rem); /* Coloca el texto a la derecha del punto */
+  top: 2.75rem; /* Alineación vertical */
+  left: calc(50% + 1.375rem); /* Coloca el texto a la derecha del punto */
   transform: translateY(-50%); /* Ajusta la alineación vertical */
-  font-size: .75rem;
+  font-size: 0.9375rem;
 }
 .dark-mode .position-location {
   color: #8da3af;
@@ -467,20 +214,19 @@ body.scrolled .introduction {
 .position-description {
   display: flex;
   position: absolute;
-  top: 3.2rem; /* Alineación vertical */
-  left: calc(50% + 1.1rem); /* Coloca el texto a la derecha del punto */
-  font-size: .75rem;
+  top: 4rem; /* Alineación vertical */
+  left: calc(50% + 1.375rem); /* Coloca el texto a la derecha del punto */
+  font-size: 0.9375rem;
 }
 .position-tools {
   display: flex;
   position: absolute;
-  
-  margin-right: 3rem;
+  margin-right: 3.75rem;
   justify-content: flex-end;
-  top: 1rem; /* Alineación vertical */
-  left: calc(50% - 1.1rem); /* Coloca el texto a la derecha del punto */
+  top: 1.25rem; /* Alineación vertical */
+  left: calc(50% - 1.375rem); /* Coloca el texto a la derecha del punto */
   transform: translate(-100%, 0%); /* Ajusta la alineación vertical */
-  font-size: .75rem;
+  font-size: 0.9375rem;
   flex-wrap: wrap;
 }
 .position-tools a:visited,
@@ -507,17 +253,17 @@ body.scrolled .introduction {
   display: flex;
   position: relative;
   cursor: pointer;
-  margin: 0.2rem;
-  padding: 0.2rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
   border-radius: 5%;
-  font-size: 0.85rem;
+  font-size: 1.0625rem;
   white-space: nowrap;
 }
 .dark-mode [class^="tag-"] {
-  border: 0.12rem solid #8da3af;
+  border: 0.15rem solid #8da3af;
 }
 .light-mode [class^="tag-"] {
-  border: 0.12rem solid #556269;
+  border: 0.15rem solid #556269;
 }
 .position-3 {
   display: flex;
@@ -525,33 +271,34 @@ body.scrolled .introduction {
   position: absolute;
   top: 0%;
   width: 100%;
-  height: 10rem;
-  gap: 1rem;
+  height: 12.5rem;
+  gap: 1.25rem;
 }
 .position-2 {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 10rem;
+  top: 12.5rem;
   width: 100%;
-  height: 10rem;
-  gap: 1rem;
+  height: 12.5rem;
+  gap: 1.25rem;
 }
 .position-1 {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 20rem;
+  top: 25rem;
   width: 100%;
-  height: 10rem;
-  gap: 1rem;
+  height: 12.5rem;
+  gap: 1.25rem;
 }
+
 .about-me {
   display: flex;
   flex-direction: column;
   background-color: #2f3643;
-  padding-bottom: 4.5rem;
-  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-top: 1.5rem;
 }
 .about-me-mix {
   display: flex;
@@ -563,7 +310,6 @@ body.scrolled .introduction {
 .about-me-image {
  width: 15%;
  border-radius: 50%;
- background-color: #00A5A5;
 }
 .about-me-text {
  width: 85%;
@@ -572,7 +318,6 @@ body.scrolled .introduction {
   display: flex;
   flex-direction: column;
   padding-bottom: 4.5rem;
-  padding-top: 3rem;
 }
 .other-notable-work-mix {
   display: flex;
@@ -678,8 +423,8 @@ body.scrolled .introduction {
   display: flex;
   flex-direction: column;
   background-color: #2f3643;
-  padding-bottom: 4.5rem;
-  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-top: 1.5rem;
 }
 .contact-me-mix {
   display: flex;
@@ -745,7 +490,7 @@ body.scrolled .introduction {
   font-family: 'Inconsolata';
     width: 100%; /* Asegura que los campos ocupen el 100% del ancho del formulario */
     padding: 1rem;
-    border: 0.1rem solid #999999;
+    border: 0.1rem solid #7fff00;
     border-radius: 1%;
     font-size: 1rem;
     background-color: #252734;
@@ -773,43 +518,7 @@ body.scrolled .introduction {
 #contact-me-form button:hover {
     background-color: #59cc00;
 }
-.footer {
-  color: #ffffff; /* Color de texto blanco */
-  padding: 1rem 2rem; /* Espaciado en el footer */
-  display: flex; /* Flexbox para alinear el contenido */
-  align-items: flex-start; /* Alinea los elementos en el eje vertical hacia el inicio */
-  width: 100%; /* Asegura que ocupe todo el ancho */
-}
 
-.footer-content {
-  display: flex;
-  justify-content: space-between; /* Distribuye los elementos dentro del contenedor */
-  width: 100%; /* Hace que ocupe todo el espacio disponible */
-}
-
-.copyright {
-  margin-left: 8.5rem; /* Desplaza el copyright a la izquierda con margen de 11rem */
-  color: #8da3af;
-}
-
-.footer-links {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-end; /* Los enlaces estarán alineados al extremo derecho */
-  margin-right: 11rem; /* Márgenes de separación a la derecha */
-  font-size: 1rem;
-}
-
-.github-link, .email-link {
-  color: white;/* Color del enlace */
-  text-decoration: underline; /* Elimina subrayado */
-  font-weight: bold; /* Negrita en el texto */
-  margin-bottom: 0.5rem; /* Espacio entre los enlaces */
-}
-
-.github-link:hover, .email-link:hover {
-  color: #7fff00; /* Color al pasar el ratón */
-}
 /*dark-mode color: #8da3af*/
 /*light-mode color: #556269*/
 /*contact-me: #1a1f26*/

@@ -1,0 +1,123 @@
+body {
+  overflow-x: hidden; /* Oculta cualquier contenido que sobresalga horizontalmente */
+}
+.introduction-container {
+    display: flex;
+    margin-left: 11rem;
+    margin-right: 11rem;
+    align-items: center; /* Centra verticalmente el texto y la imagen */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: white;
+    font-family: 'Oswald';
+    font-size: 4rem;
+    width: 100%;
+    gap: 6rem;
+  }
+  .section-line {
+    margin-top: 1.25rem;
+    width: 15rem; /* Ancho completo del contenedor */
+    height: 0.5rem; /* Altura de la línea */
+    border-radius: 10rem;
+    background-color: #7fff00;
+  }
+.contact-me {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4.5rem;
+    padding-top: 3rem;
+  }
+  .contact-me-mix {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+    margin-left: 11rem;
+    margin-right: 11rem;
+  }
+  .contact-me-container {
+    position: flex;
+    flex-direction: column;
+    width: 40%;
+    position: relative;
+    font-size: 1rem;
+    color: #8da3af;
+  }
+  .contact-me-text {
+    width: 100%;
+   }
+   .contact-me-text strong {
+    color: #ffffff; /* Color para el texto dentro de <strong> */
+  }
+  .contact-me-linkedin {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .image-container {
+    position: relative;
+    width: 100%; /* Ajusta el tamaño según tu necesidad */
+    height: 10rem; /* Ajusta el tamaño según tu necesidad */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    overflow: hidden; /* Recorta la imagen fuera del contenedor */
+  }
+  .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen cubra todo el contenedor sin deformarse */
+    clip-path: inset(0 0 0 65%); /* Recorta la imagen por el lado izquierdo */
+    transform: translateX(-30%); /* Inicialmente mueve la imagen un poco a la izquierda */
+    transition: transform 0.5s ease-in-out, clip-path 0.5s ease-in-out; /* Transición suave para el hover */
+  }
+  .image-container:hover img {
+    clip-path: inset(0 0 0 0); /* Elimina el recorte al pasar el ratón */
+    transform: translateX(0);
+  }
+  .contact-me-form {
+    width: 60%;
+    background-color: #252734;
+  }
+  #contact-me-form {
+    display: flex;
+    flex-direction: column; /* Apilar los elementos verticalmente */
+    width: 60%;
+    gap: 1rem; /* Espacio entre los elementos del formulario */
+    font-family: 'Oswald';
+  }
+  #contact-me-form input[type="text"],
+  #contact-me-form input[type="email"],
+  #contact-me-form textarea {
+    font-family: 'Inconsolata';
+      width: 100%; /* Asegura que los campos ocupen el 100% del ancho del formulario */
+      padding: 1rem;
+      border: 0.1rem solid #7fff00;
+      border-radius: 1%;
+      font-size: 1rem;
+      background-color: #252734;
+      color: white;
+      resize: none;
+  }
+  #contact-me-form textarea {
+    height: 10rem;
+  }
+  /* Estilo para el botón */
+  #contact-me-form button {
+    margin-top: 0.5rem;
+    font-family: 'Oswald';
+    border: none;
+    border-radius: 1%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #7fff00;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.5rem;
+  }
+  /* Hover para el botón */
+  #contact-me-form button:hover {
+      background-color: #59cc00;
+  }
+  body.scrolled .introduction-container{
+    margin-top: 6.25rem;
+  }

@@ -13,7 +13,7 @@ function sendMail() {
             console.log("Success!", response.status, response.text);
             alert("Email sent successfully!");
             setTimeout(() => {
-                window.location.href = "./home.html"; // Redirige a home.html después de 1 segundo
+                window.location.href = "./index.html"; // Redirige a index.html después de 1 segundo
             }, 1000); // Retraso de 1 segundo para dar tiempo al mensaje de alerta
         })
         .catch(function (error) {
