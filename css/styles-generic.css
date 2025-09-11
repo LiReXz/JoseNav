@@ -366,7 +366,7 @@ body.light-mode {
   }
   
   .copyright {
-    margin-left: 8.5rem; /* Desplaza el copyright a la izquierda con margen de 11rem */
+    margin-left: 6rem; /* Desplaza el copyright a la izquierda con margen de 11rem */
     color: #8da3af;
     font-size: clamp(0.9rem, 1.1vw, 1.1rem);
   }
@@ -375,7 +375,7 @@ body.light-mode {
     display: flex;
     gap: 2rem;
     align-items: flex-end; /* Los enlaces estarán alineados al extremo derecho */
-    margin-right: 11rem; /* Márgenes de separación a la derecha */
+    margin-right: 6rem; /* Márgenes de separación a la derecha */
     font-size: clamp(1rem, 1.2vw, 1.15rem);
   }
   
