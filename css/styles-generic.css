@@ -120,6 +120,11 @@ header.scrolled {
     background-color: transparent;
 }
 
+/* Compensar el espacio del header fijo */
+body.scrolled {
+    padding-top: 6.25rem;
+}
+
 /* Capa adicional para bloquear clics específicamente */
 body.scrolled::before {
     content: "";

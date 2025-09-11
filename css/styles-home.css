@@ -6,16 +6,16 @@
 }
 .home-logo {
   position: absolute;
-  top: 9.375rem;
-  right: 11.5rem;
+  top: 12rem;
+  right: 6rem;
   width: 30rem;
   object-fit: cover;
   z-index: 2;
 }
 .home-logo-shadow {
   position: absolute;
-  top: 9.875rem;
-  right: 11rem;
+  top: 12.5rem;
+  right: 5.5rem;
   width: 30rem;
   object-fit: cover;
   z-index: 1;
