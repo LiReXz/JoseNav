@@ -6,20 +6,18 @@
 }
 .home-logo {
   position: absolute;
-  top: 0rem;
+  top: 9.375rem;
   right: 11.5rem;
   width: 50rem;
-  object-fit: cover; /* Asegura que la imagen se recorte bien dentro del contenedor */
-  justify-content: left;
+  object-fit: cover;
   z-index: 2;
 }
 .home-logo-shadow {
   position: absolute;
-  top: 0.5rem;
+  top: 9.875rem;
   right: 11rem;
   width: 50rem;
-  object-fit: cover; /* Asegura que la imagen se recorte bien dentro del contenedor */
-  justify-content: left;
+  object-fit: cover;
   z-index: 1;
 }
 .logo-line {
@@ -303,16 +301,20 @@
 .about-me-mix {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 2rem;
   margin-left: 6rem;
   margin-right: 6rem;
 }
 .about-me-image {
- width: 15%;
- border-radius: 50%;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: brightness(0.65) saturate(0.7);
 }
 .about-me-text {
- width: 85%;
+  flex: 1;
+  line-height: 1.6;
 }
 .other-notable-work {
   display: flex;
