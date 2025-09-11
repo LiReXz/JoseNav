@@ -1,6 +1,6 @@
 .introduction {
   margin-left: 6rem;
-  margin-right: 75rem;
+  margin-right: 35rem;
   text-align: left;
   white-space: nowrap;
 }
@@ -8,7 +8,7 @@
   position: absolute;
   top: 9.375rem;
   right: 11.5rem;
-  width: 50rem;
+  width: 30rem;
   object-fit: cover;
   z-index: 2;
 }
@@ -16,7 +16,7 @@
   position: absolute;
   top: 9.875rem;
   right: 11rem;
-  width: 50rem;
+  width: 30rem;
   object-fit: cover;
   z-index: 1;
 }
@@ -36,7 +36,7 @@
 .presentation {
   margin-top: 2rem;
   margin-left: 6rem;
-  margin-right: 75rem;
+  margin-right: 35rem;
   text-align: left;
   line-height: 1.5;
   font-size: 1rem;
