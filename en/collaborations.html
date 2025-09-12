@@ -1,5 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html            <nav>
+                <ul class="nav-list">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./laboratories.html">Laboratories</a></li>
+                    <li class="active"><a href="./collaborations.html">Collaborations</a></li>
+                    <li><a href="./cv.html">CV</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-toggle-container">
+                <span class="language-option active" data-lang="en">EN</span>
+                <span class="language-separator">|</span>
+                <span class="language-option" data-lang="es">ES</span>
+            </div>
+            <div class="theme-toggle-container">>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +43,11 @@
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <div class="language-toggle-container">
+                <span class="language-option active" data-lang="en">EN</span>
+                <span class="language-separator">|</span>
+                <span class="language-option" data-lang="es">ES</span>
+            </div>
             <div class="theme-toggle-container">
                 <i class="fas fa-sun sun-icon"></i> <!-- Icono de sol -->
                 <div class="moving-bar" id="toggle-bar">
@@ -63,9 +82,16 @@
 
          More projects to be added... 
     </section> -->
-    <!-- <footer>
-        <p>Contact: <a href="mailto:josenav3547@gmail.com">josenav3547@gmail.com</a></p>
-    </footer> -->
+    <footer class="footer">
+        <div class="footer-content">
+          <p class="copyright">© 2024 José Navarro Pavón. All Rights Reserved.</p>
+          <div class="footer-links">
+            <a href="https://github.com/lirexz" target="_blank" class="github-link">GitHub</a>
+            <a href="./contact.html" class="email-link">Email</a>
+          </div>
+        </div>
+    </footer>
     <script src="../scripts/scroll.js"></script>
     <script src="../scripts/theme.js"></script>
+    <script src="../scripts/language-toggle.js"></script>
 </body>

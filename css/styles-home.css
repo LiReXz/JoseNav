@@ -562,8 +562,8 @@
 /* Footer styles for dynamic responsive layout */
 .other-notable-work-mix .other-notable-work-labs-container footer,
 .other-notable-work-mix .other-notable-work-collaborations-container footer {
-  margin-top: 0; /* Will be set dynamically by JavaScript */
-  margin-bottom: 0; /* Will be set dynamically by JavaScript */
+  margin-top: 0 !important; /* Will be set dynamically by JavaScript */
+  margin-bottom: 0 !important; /* Will be set dynamically by JavaScript */
   padding: 0.1rem !important;
   padding-left: 0.3rem !important;
   padding-right: 0.3rem !important;

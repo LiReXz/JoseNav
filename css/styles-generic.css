@@ -273,6 +273,55 @@ header .logo {
 .nav-list li.active:hover::before {
   transform: translate(-50%, -50%) scale(1);
 }
+
+/* Language Toggle Styles */
+.language-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.language-option {
+  color: #8da3af;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.language-option:hover {
+  color: #a4aae0;
+}
+
+.language-option.active {
+  color: #7fff00;
+  font-weight: bold;
+}
+
+.language-separator {
+  color: #8da3af;
+  user-select: none;
+}
+
+.dark-mode .language-option {
+  color: #c9d3d8;
+}
+
+.dark-mode .language-option:hover {
+  color: #ffffff;
+}
+
+.dark-mode .language-option.active {
+  color: #7fff00;
+  font-weight: bold;
+}
+
+.dark-mode .language-separator {
+  color: #c9d3d8;
+}
+
 .theme-toggle-container {
   width: 6.25rem;
   height: 3.125rem;

@@ -83,9 +83,9 @@ function adjustOtherNotableWorkLayout(isResize = false) {
                     // Set consistent height for all containers
                     container.style.height = `${maxRequiredHeight}px`;
                     
-                    // Apply calculated margins
-                    footerElement.style.marginTop = `${textToFooterGap}px`;
-                    footerElement.style.marginBottom = `${footerToBottomMargin}px`;
+                    // Apply calculated margins with !important to override CSS
+                    footerElement.style.setProperty('margin-top', `${textToFooterGap}px`, 'important');
+                    footerElement.style.setProperty('margin-bottom', `${footerToBottomMargin}px`, 'important');
                 });
             });
         });
