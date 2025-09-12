@@ -19,6 +19,42 @@
   width: 30rem;
   object-fit: cover;
   z-index: 1;
+} .other-notable-work-labs-container {
+  display: flex;
+  flex-direction: column; /* Asegura que los hijos se apilen verticalmente */
+  align-items: center;    /* Centra horizontalmente los hijos */
+  justify-content: flex-start; /* Alinea desde arriba para control manual */
+  width: 30%;
+  min-height: 400px; /* Base height, will be adjusted by JavaScript */
+  background-color: #2f3643;
+  padding-top: 1.5rem;
+  border-radius: 1%;
+  position: relative; /* Necesario para aplicar el efecto de desplazamiento */
+  transition: transform 0.3s ease; /* Transición para el desplazamiento */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .other-notable-work-labs-container {
+    width: 35%;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .other-notable-work-labs-container {
+    width: 45%;
+    min-height: 300px;
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .other-notable-work-labs-container {
+    width: 90%;
+    min-height: 280px;
+    margin-bottom: 1.5rem;
+  }
 }
 .logo-line {
   margin-top: 1.25rem;
@@ -347,10 +383,37 @@
 .other-notable-work-mix {
   display: flex;
   align-items: stretch;
-  justify-content: space-between;
-  gap: 0rem;
+  justify-content: center; /* Centrar los contenedores */
+  gap: 3rem; /* Gap visible entre contenedores centrados */
   margin-left: 6rem;
   margin-right: 6rem;
+}
+
+/* Responsive adjustments for container layout */
+@media (max-width: 1200px) {
+  .other-notable-work-mix {
+    gap: 2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .other-notable-work-mix {
+    gap: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .other-notable-work-mix {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 .other-notable-work-mix footer{
   margin-bottom: 1rem;
@@ -372,9 +435,9 @@
   display: flex;
   flex-direction: column; /* Asegura que los hijos se apilen verticalmente */
   align-items: center;    /* Centra horizontalmente los hijos */
-  justify-content: center; /* Centra verticalmente si el contenedor tiene más altura */
-  margin-left: 15rem;         /* Centra el contenedor en su padre */
+  justify-content: flex-start; /* Alinea desde arriba para control manual */
   width: 30%;
+  height: 450px; /* Reducida la altura para compensar el espaciado anterior */
   background-color: #2f3643;
   padding-top: 1.5rem;
   border-radius: 1%;
@@ -385,9 +448,12 @@
   transform: translateY(-1rem); /* Mueve el contenedor hacia arriba al pasar el ratón */
   cursor: pointer;
   background-color: #424657; /* Nuevo color de fondo al pasar el ratón */
+  box-shadow: 0 0 20px rgba(127, 255, 0, 0.8); /* Green glow border effect */
 }
 .other-notable-work-labs-image {
   width: 90%;
+  height: 200px; /* Fixed height for alignment */
+  object-fit: cover; /* Maintain aspect ratio while filling the space */
   border-radius: 1%;
   filter: grayscale(100%); /* Blanco y negro por defecto */
   transition: filter 0.3s ease; /* Transición para la restauración del color */
@@ -397,35 +463,76 @@
 }
  .other-notable-work-labs-text {
   width: 90%;
-  padding-bottom: 1.5rem;
   color: #8da3af;
+  text-align: center; /* Center the text */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0; /* Eliminado margen inferior del contenedor de texto */
+ }
+
+ /* Reset margins for text content */
+ .other-notable-work-labs-text p,
+ .other-notable-work-collaborations-text p {
+  margin: 0;
+  padding: 0;
  }
  .other-notable-work-labs-text h3 {
   font-family: 'Oswald';
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem; /* Aumentado más el margen entre título y texto */
   color: #ffffff;
+  text-align: center; /* Center the title */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
  }
  .other-notable-work-collaborations-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-right: 15rem;
+  justify-content: flex-start; /* Alinea desde arriba para control manual */
   width: 30%;
+  min-height: 400px; /* Base height, will be adjusted by JavaScript */
   background-color: #2f3643;
   padding-top: 1.5rem;
   border-radius: 1%;
   position: relative; /* Necesario para aplicar el efecto de desplazamiento */
   transition: transform 0.3s ease; /* Transición para el desplazamiento */
 }
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .other-notable-work-collaborations-container {
+    width: 35%;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .other-notable-work-collaborations-container {
+    width: 45%;
+    min-height: 300px;
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .other-notable-work-collaborations-container {
+    width: 90%;
+    min-height: 280px;
+    margin-bottom: 1.5rem;
+  }
+}
 .other-notable-work-collaborations-container:hover {
   transform: translateY(-1rem); /* Mueve el contenedor hacia arriba al pasar el ratón */
   cursor: pointer;
   background-color: #424657; /* Nuevo color de fondo al pasar el ratón */
+  box-shadow: 0 0 20px rgba(127, 255, 0, 0.8); /* Green glow border effect */
 }
 .other-notable-work-collaborations-image {
   width: 90%;
+  height: 200px; /* Fixed height for alignment */
+  object-fit: cover; /* Maintain aspect ratio while filling the space */
   border-radius: 1%;
   filter: grayscale(100%); /* Blanco y negro por defecto */
   transition: filter 0.3s ease; /* Transición para la restauración del color */
@@ -435,15 +542,38 @@
 }
  .other-notable-work-collaborations-text {
   width: 90%;
-  padding-bottom: 1.5rem;
   color: #8da3af;
+  text-align: center; /* Center the text */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0; /* Eliminado margen inferior del contenedor de texto */
  }
  .other-notable-work-collaborations-text h3 {
   font-family: 'Oswald';
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem; /* Aumentado más el margen entre título y texto */
   color: #ffffff;
+  text-align: center; /* Center the title */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
  }
+
+/* Footer styles for dynamic responsive layout */
+.other-notable-work-mix .other-notable-work-labs-container footer,
+.other-notable-work-mix .other-notable-work-collaborations-container footer {
+  margin-top: 0; /* Will be set dynamically by JavaScript */
+  margin-bottom: 0; /* Will be set dynamically by JavaScript */
+  padding: 0.1rem !important;
+  padding-left: 0.3rem !important;
+  padding-right: 0.3rem !important;
+  color: #000000 !important;
+  background-color: #7fff00 !important;
+  border-radius: 5% !important;
+  font-family: 'Oswald' !important;
+  text-align: center !important;
+}
+
  .contact-me {
   display: flex;
   flex-direction: column;
