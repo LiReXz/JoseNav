@@ -82,7 +82,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 0.3125rem;
-  height: 100%;
+  height: 0; /* Inicialmente sin altura, será calculada por JavaScript */
   z-index: 1;
 }
 .dark-mode .timeline::before {
@@ -113,13 +113,14 @@
 /* Company Point */
 .company-point {
   position: absolute;
-  top: calc(1.875rem * 1.25 / 2); /* Centrado con respecto al título: font-size * line-height / 2 */
-  left: 50%;
+  top: 0.8rem; /* Posición inicial más cercana al título */
+  left: 50%; /* Centrado en la timeline */
   width: 1.25rem;
   height: 1.25rem;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  transition: top 0.2s ease;
 }
 .dark-mode .company-point {
   background-color: #7fff00;
@@ -131,10 +132,10 @@
 .company-info {
   position: relative;
   top: 0;
-  left: calc(50% + 1.375rem);
+  left: calc(50% + 0.8rem); /* Reducido el margen para acercarlo más al punto */
   transform: translateY(0);
-  margin-left: 1.375rem;
-  width: calc(50% - 1.375rem);
+  margin-left: 0.8rem; /* Reducido también el margin-left */
+  width: calc(50% - 0.8rem); /* Ajustado el ancho proporcionalmente */
   flex-shrink: 0;
 }
 
@@ -197,13 +198,14 @@
 /* Position Point - centrado en timeline */
 .position-point {
   position: absolute;
-  top: calc(1.25rem * 1.25 / 2);
+  top: 1.5rem; /* Posición inicial aproximada para reducir el salto */
   left: 50%; /* Centrado con la timeline */
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  transition: top 0.2s ease;
 }
 .dark-mode .position-point {
   background-color: #ffffff;
@@ -219,16 +221,18 @@
   gap: 0.125rem;
   justify-content: flex-end;
   align-items: center;
-  width: calc(50% - 0.625rem); /* 50% menos la mitad del ancho del punto (0.75rem / 2) */
+  width: 50%; 
   padding: 0;
   margin: 0;
+  margin-right: 0.75rem; /* Margen directo hacia el centro */
 }
 
 /* Información a la derecha */
 .position-info {
-  width: calc(50% - 0.625rem); /* 50% menos la mitad del ancho del punto (0.75rem / 2) */
+  width: 50%;
   padding: 0;
   margin: 0;
+  margin-left: 0.75rem; /* Margen directo desde el centro */
   min-width: 0;
 }
 
