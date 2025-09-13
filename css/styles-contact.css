@@ -3,8 +3,8 @@ body {
 }
 .introduction-container {
     display: flex;
-    margin-left: 11rem;
-    margin-right: 11rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
     align-items: center; /* Centra verticalmente el texto y la imagen */
     text-decoration: none; /* Quita el subrayado del enlace */
     font-family: 'Oswald';
@@ -40,8 +40,8 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 5rem;
-    margin-left: 11rem;
-    margin-right: 11rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
   }
   .contact-me-container {
     position: flex;
