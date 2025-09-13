@@ -294,10 +294,18 @@ header .logo {
 .language-option:hover {
   color: #a4aae0;
 }
-
 .language-option.active {
-  color: #7fff00;
   font-weight: bold;
+}
+.dark-mode .language-option.active {
+  color: #7fff00;
+}
+
+.light-mode .language-option.active {
+  color: #F4A261;
+}
+.light-mode .language-option:hover {
+  color: #556269;
 }
 
 .language-separator {
@@ -410,7 +418,12 @@ body.light-mode {
     display: flex; /* Flexbox para alinear el contenido */
     align-items: flex-start; /* Alinea los elementos en el eje vertical hacia el inicio */
     width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+  .dark-mode .footer {
     background-color: #1b1c25;
+  }
+  .light-mode .footer {
+    background-color: #6B8FB3;
   }
   
   .footer-content {
@@ -421,8 +434,13 @@ body.light-mode {
   
   .copyright {
     margin-left: 6rem; /* Desplaza el copyright a la izquierda con margen de 11rem */
-    color: #8da3af;
     font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+  }
+  .dark-mode .copyright {
+    color: #8da3af;
+  }
+  .light-mode .copyright {
+    color: #556269;
   }
   
   .footer-links {
@@ -433,13 +451,24 @@ body.light-mode {
     font-size: clamp(1rem, 1.2vw, 1.15rem);
   }
   
-  .github-link, .email-link {
+  .dark-mode .github-link, .dark-mode .email-link {
     color: white;/* Color del enlace */
     text-decoration: underline; /* Elimina subrayado */
     font-weight: bold; /* Negrita en el texto */
     margin-bottom: 0.5rem; /* Espacio entre los enlaces */
   }
   
-  .github-link:hover, .email-link:hover {
+  .light-mode .github-link, .light-mode .email-link {
+    color: #000000;/* Color del enlace en light mode */
+    text-decoration: underline; /* Elimina subrayado */
+    font-weight: bold; /* Negrita en el texto */
+    margin-bottom: 0.5rem; /* Espacio entre los enlaces */
+  }
+  
+  .dark-mode .github-link:hover, .dark-mode .email-link:hover {
     color: #7fff00; /* Color al pasar el ratón */
+  }
+  
+  .light-mode .github-link:hover, .light-mode .email-link:hover {
+    color: #F4A261; /* Color al pasar el ratón en light mode */
   }

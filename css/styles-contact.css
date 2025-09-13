@@ -7,18 +7,28 @@ body {
     margin-right: 11rem;
     align-items: center; /* Centra verticalmente el texto y la imagen */
     text-decoration: none; /* Quita el subrayado del enlace */
-    color: white;
     font-family: 'Oswald';
     font-size: 4rem;
     width: 100%;
     gap: 6rem;
+  }
+  .dark-mode .introduction-container {
+    color: white;
+  }
+  .light-mode .introduction-container {
+    color: #000000;
   }
   .section-line {
     margin-top: 1.25rem;
     width: 15rem; /* Ancho completo del contenedor */
     height: 0.5rem; /* Altura de la línea */
     border-radius: 10rem;
+  }
+  .dark-mode .section-line {
     background-color: #7fff00;
+  }
+  .light-mode .section-line {
+    background-color: #F4A261;
   }
 .contact-me {
     display: flex;
@@ -39,13 +49,21 @@ body {
     width: 40%;
     position: relative;
     font-size: 1rem;
+  }
+  .dark-mode .contact-me-container {
     color: #8da3af;
+  }
+  .light-mode .contact-me-container {
+    color: #556269;
   }
   .contact-me-text {
     width: 100%;
    }
-   .contact-me-text strong {
+   .dark-mode .contact-me-text strong {
     color: #ffffff; /* Color para el texto dentro de <strong> */
+  }
+   .light-mode .contact-me-text strong {
+    color: #000000; /* Color para el texto dentro de <strong> en light mode */
   }
   .contact-me-linkedin {
     width: 100%;
@@ -75,7 +93,12 @@ body {
   }
   .contact-me-form {
     width: 60%;
+  }
+  .dark-mode .contact-me-form {
     background-color: #252734;
+  }
+  .light-mode .contact-me-form {
+    background-color: #ffffff;
   }
   #contact-me-form {
     display: flex;
@@ -90,12 +113,23 @@ body {
     font-family: 'Inconsolata';
       width: 100%; /* Asegura que los campos ocupen el 100% del ancho del formulario */
       padding: 1rem;
-      border: 0.1rem solid #7fff00;
       border-radius: 1%;
       font-size: 1rem;
+      resize: none;
+  }
+  .dark-mode #contact-me-form input[type="text"],
+  .dark-mode #contact-me-form input[type="email"],
+  .dark-mode #contact-me-form textarea {
+      border: 0.1rem solid #7fff00;
       background-color: #252734;
       color: white;
-      resize: none;
+  }
+  .light-mode #contact-me-form input[type="text"],
+  .light-mode #contact-me-form input[type="email"],
+  .light-mode #contact-me-form textarea {
+      border: 0.1rem solid #F4A261;
+      background-color: #ffffff;
+      color: #000000;
   }
   #contact-me-form textarea {
     height: 10rem;
@@ -108,15 +142,23 @@ body {
     border-radius: 1%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: #7fff00;
     color: #000000;
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 1.5rem;
   }
+  .dark-mode #contact-me-form button {
+    background-color: #7fff00;
+  }
+  .light-mode #contact-me-form button {
+    background-color: #F4A261;
+  }
   /* Hover para el botón */
-  #contact-me-form button:hover {
+  .dark-mode #contact-me-form button:hover {
       background-color: #59cc00;
+  }
+  .light-mode #contact-me-form button:hover {
+      background-color: #E8925D;
   }
   body.scrolled .introduction-container{
     margin-top: 6.25rem;

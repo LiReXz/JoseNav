@@ -353,9 +353,14 @@
 .about-me {
   display: flex;
   flex-direction: column;
-  background-color: #2f3643;
   padding-bottom: 3rem;
   padding-top: 1.5rem;
+}
+.dark-mode .about-me {
+  background-color: #2f3643;
+}
+.light-mode .about-me {
+  background-color: #88A5C7;
 }
 .about-me-mix {
   display: flex;
@@ -415,7 +420,13 @@
     margin-right: 1rem;
   }
 }
-.other-notable-work-mix footer{
+.other-notable-work-mix a{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+.dark-mode .other-notable-work-mix footer{
   margin-bottom: 1rem;
   padding: 0.2rem;
   padding-left: 0.5rem;
@@ -425,11 +436,15 @@
   border-radius: 5%;
   font-family: 'Oswald';
 }
-.other-notable-work-mix a{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 10;
+.light-mode .other-notable-work-mix footer{
+  margin-bottom: 1rem;
+  padding: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #000000;
+  background-color: #C8805D;
+  border-radius: 5%;
+  font-family: 'Oswald';
 }
 .other-notable-work-labs-container {
   display: flex;
@@ -438,17 +453,28 @@
   justify-content: flex-start; /* Alinea desde arriba para control manual */
   width: 30%;
   height: 450px; /* Reducida la altura para compensar el espaciado anterior */
-  background-color: #2f3643;
   padding-top: 1.5rem;
   border-radius: 1%;
   position: relative; /* Necesario para aplicar el efecto de desplazamiento */
   transition: transform 0.3s ease; /* Transición para el desplazamiento */
 }
+.dark-mode .other-notable-work-labs-container {
+  background-color: #2f3643;
+}
+.light-mode .other-notable-work-labs-container {
+  background-color: #88A5C7;
+}
 .other-notable-work-labs-container:hover {
   transform: translateY(-1rem); /* Mueve el contenedor hacia arriba al pasar el ratón */
   cursor: pointer;
+}
+.dark-mode .other-notable-work-labs-container:hover {
   background-color: #424657; /* Nuevo color de fondo al pasar el ratón */
   box-shadow: 0 0 20px rgba(127, 255, 0, 0.8); /* Green glow border effect */
+}
+.light-mode .other-notable-work-labs-container:hover {
+  background-color: #6B8FB3; /* Color más oscuro para hover en light mode */
+  box-shadow: 0 0 20px rgba(244, 162, 97, 0.8); /* Orange glow border effect */
 }
 .other-notable-work-labs-image {
   width: 90%;
@@ -463,11 +489,16 @@
 }
  .other-notable-work-labs-text {
   width: 90%;
-  color: #8da3af;
   text-align: center; /* Center the text */
   display: flex;
   flex-direction: column;
   margin-bottom: 0; /* Eliminado margen inferior del contenedor de texto */
+ }
+ .dark-mode .other-notable-work-labs-text {
+  color: #8da3af;
+ }
+ .light-mode .other-notable-work-labs-text {
+  color: #556269;
  }
 
  /* Reset margins for text content */
@@ -480,11 +511,16 @@
   font-family: 'Oswald';
   font-size: 2rem;
   margin-bottom: 0.8rem; /* Aumentado más el margen entre título y texto */
-  color: #ffffff;
   text-align: center; /* Center the title */
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
+ }
+ .dark-mode .other-notable-work-labs-text h3 {
+  color: #ffffff;
+ }
+ .light-mode .other-notable-work-labs-text h3 {
+  color: #000000;
  }
  .other-notable-work-collaborations-container {
   display: flex;
@@ -493,11 +529,16 @@
   justify-content: flex-start; /* Alinea desde arriba para control manual */
   width: 30%;
   min-height: 400px; /* Base height, will be adjusted by JavaScript */
-  background-color: #2f3643;
   padding-top: 1.5rem;
   border-radius: 1%;
   position: relative; /* Necesario para aplicar el efecto de desplazamiento */
   transition: transform 0.3s ease; /* Transición para el desplazamiento */
+}
+.dark-mode .other-notable-work-collaborations-container {
+  background-color: #2f3643;
+}
+.light-mode .other-notable-work-collaborations-container {
+  background-color: #88A5C7;
 }
 
 /* Responsive adjustments */
@@ -526,8 +567,14 @@
 .other-notable-work-collaborations-container:hover {
   transform: translateY(-1rem); /* Mueve el contenedor hacia arriba al pasar el ratón */
   cursor: pointer;
+}
+.dark-mode .other-notable-work-collaborations-container:hover {
   background-color: #424657; /* Nuevo color de fondo al pasar el ratón */
   box-shadow: 0 0 20px rgba(127, 255, 0, 0.8); /* Green glow border effect */
+}
+.light-mode .other-notable-work-collaborations-container:hover {
+  background-color: #6B8FB3; /* Color más oscuro para hover en light mode */
+  box-shadow: 0 0 20px rgba(244, 162, 97, 0.8); /* Orange glow border effect */
 }
 .other-notable-work-collaborations-image {
   width: 90%;
@@ -542,26 +589,36 @@
 }
  .other-notable-work-collaborations-text {
   width: 90%;
-  color: #8da3af;
   text-align: center; /* Center the text */
   display: flex;
   flex-direction: column;
   margin-bottom: 0; /* Eliminado margen inferior del contenedor de texto */
  }
+ .dark-mode .other-notable-work-collaborations-text {
+  color: #8da3af;
+ }
+ .light-mode .other-notable-work-collaborations-text {
+  color: #556269;
+ }
  .other-notable-work-collaborations-text h3 {
   font-family: 'Oswald';
   font-size: 2rem;
   margin-bottom: 0.8rem; /* Aumentado más el margen entre título y texto */
-  color: #ffffff;
   text-align: center; /* Center the title */
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
  }
+ .dark-mode .other-notable-work-collaborations-text h3 {
+  color: #ffffff;
+ }
+ .light-mode .other-notable-work-collaborations-text h3 {
+  color: #000000;
+ }
 
 /* Footer styles for dynamic responsive layout */
-.other-notable-work-mix .other-notable-work-labs-container footer,
-.other-notable-work-mix .other-notable-work-collaborations-container footer {
+.dark-mode .other-notable-work-mix .other-notable-work-labs-container footer,
+.dark-mode .other-notable-work-mix .other-notable-work-collaborations-container footer {
   margin-top: 0 !important; /* Will be set dynamically by JavaScript */
   margin-bottom: 0 !important; /* Will be set dynamically by JavaScript */
   padding: 0.1rem !important;
@@ -573,13 +630,31 @@
   font-family: 'Oswald' !important;
   text-align: center !important;
 }
+.light-mode .other-notable-work-mix .other-notable-work-labs-container footer,
+.light-mode .other-notable-work-mix .other-notable-work-collaborations-container footer {
+  margin-top: 0 !important; /* Will be set dynamically by JavaScript */
+  margin-bottom: 0 !important; /* Will be set dynamically by JavaScript */
+  padding: 0.1rem !important;
+  padding-left: 0.3rem !important;
+  padding-right: 0.3rem !important;
+  color: #000000 !important;
+  background-color: #C8805D !important;
+  border-radius: 5% !important;
+  font-family: 'Oswald' !important;
+  text-align: center !important;
+}
 
  .contact-me {
   display: flex;
   flex-direction: column;
-  background-color: #2f3643;
   padding-bottom: 3rem;
   padding-top: 1.5rem;
+}
+.dark-mode .contact-me {
+  background-color: #2f3643;
+}
+.light-mode .contact-me {
+  background-color: #88A5C7;
 }
 .contact-me-mix {
   display: flex;
@@ -594,7 +669,12 @@
   width: 40%;
   position: relative;
   font-size: 1rem;
+}
+.dark-mode .contact-me-container {
   color: #8da3af;
+}
+.light-mode .contact-me-container {
+  color: #556269;
 }
 .contact-me-text {
   width: 100%;
@@ -630,7 +710,12 @@
 }
 .contact-me-form {
   width: 60%;
+}
+.dark-mode .contact-me-form {
   background-color: #252734;
+}
+.light-mode .contact-me-form {
+  background-color: #ffffff;
 }
 #contact-me-form {
   display: flex;
@@ -645,12 +730,23 @@
   font-family: 'Inconsolata';
     width: 100%; /* Asegura que los campos ocupen el 100% del ancho del formulario */
     padding: 1rem;
-    border: 0.1rem solid #7fff00;
     border-radius: 1%;
     font-size: 1rem;
+    resize: none;
+}
+.dark-mode #contact-me-form input[type="text"],
+.dark-mode #contact-me-form input[type="email"],
+.dark-mode #contact-me-form textarea {
+    border: 0.1rem solid #7fff00;
     background-color: #252734;
     color: white;
-    resize: none;
+}
+.light-mode #contact-me-form input[type="text"],
+.light-mode #contact-me-form input[type="email"],
+.light-mode #contact-me-form textarea {
+    border: 0.1rem solid #F4A261;
+    background-color: #ffffff;
+    color: #000000;
 }
 #contact-me-form textarea {
   height: 10rem;
@@ -663,15 +759,23 @@
   border-radius: 1%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  background-color: #7fff00;
   color: #000000;
   cursor: pointer;
   transition: background-color 0.3s;
   font-size: 1.5rem;
 }
+.dark-mode #contact-me-form button {
+  background-color: #7fff00;
+}
+.light-mode #contact-me-form button {
+  background-color: #F4A261;
+}
 /* Hover para el botón */
-#contact-me-form button:hover {
+.dark-mode #contact-me-form button:hover {
     background-color: #59cc00;
+}
+.light-mode #contact-me-form button:hover {
+    background-color: #E8925D;
 }
 
 /*dark-mode color: #8da3af*/

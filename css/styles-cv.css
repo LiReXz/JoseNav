@@ -7,18 +7,28 @@ body {
     margin-right: 11rem;
     align-items: center; /* Centra verticalmente el texto y la imagen */
     text-decoration: none; /* Quita el subrayado del enlace */
-    color: white;
     font-family: 'Oswald';
     font-size: 4rem;
     width: 100%;
     gap: 6rem;
+  }
+  .dark-mode .introduction-container {
+    color: white;
+  }
+  .light-mode .introduction-container {
+    color: #000000;
   }
   .section-line {
     margin-top: 1.25rem;
     width: 15rem; /* Ancho completo del contenedor */
     height: 0.5rem; /* Altura de la línea */
     border-radius: 10rem;
+  }
+  .dark-mode .section-line {
     background-color: #7fff00;
+  }
+  .light-mode .section-line {
+    background-color: #F4A261;
   }
 /* Estilo de la imagen */
 .introduction-image {
@@ -37,11 +47,25 @@ body {
     width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     display: block; /* Elimina el espacio blanco inferior de la imagen */
-    filter: brightness(0.75); /* Inicialmente, la imagen tiene brillo reducido */
+    filter: brightness(0.5); /* Inicialmente, la imagen tiene brillo reducido */
     transition: filter 0.5s ease; /* Suaviza el cambio de brillo */
+}
+.dark-mode .introduction-image-img {
+    content: url('../media/download-dark.png');
+    filter: brightness(0.5); /* Verde con brillo reducido en dark mode */
+}
+.light-mode .introduction-image-img {
+    content: url('../media/download-light.png');
+    filter: brightness(0.5); /* Brillo reducido en light mode, usando imagen naranja */
 }
 .introduction-image:hover .introduction-image-img {
     filter: brightness(1); /* Aumenta el brillo de la imagen */
+}
+.dark-mode .introduction-image:hover .introduction-image-img {
+    filter: brightness(1); /* Verde brillante en dark mode hover */
+}
+.light-mode .introduction-image:hover .introduction-image-img {
+    filter: brightness(1); /* Naranja brillante en light mode hover */
 }
 .cv-image {
     width: 60rem;

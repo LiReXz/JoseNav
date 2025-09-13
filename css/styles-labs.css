@@ -1,0 +1,66 @@
+/* Labs page specific styles */
+body {
+  overflow-x: hidden; /* Oculta cualquier contenido que sobresalga horizontalmente */
+}
+
+.introduction-container {
+  display: flex;
+  margin-left: 11rem;
+  margin-right: 11rem;
+  align-items: center; /* Centra verticalmente el texto y la imagen */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  font-family: 'Oswald';
+  font-size: 4rem;
+  width: 100%;
+  gap: 6rem;
+}
+.dark-mode .introduction-container {
+  color: white;
+}
+.light-mode .introduction-container {
+  color: #000000;
+}
+
+.section-line {
+  margin-top: 1.25rem;
+  width: 15rem; /* Ancho completo del contenedor */
+  height: 0.5rem; /* Altura de la línea */
+  border-radius: 10rem;
+}
+.dark-mode .section-line {
+  background-color: #7fff00;
+}
+.light-mode .section-line {
+  background-color: #F4A261;
+}
+
+/* Laboratory projects section */
+.labs-section {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3rem;
+  padding-top: 1.5rem;
+}
+.dark-mode .labs-section {
+  background-color: #2f3643;
+}
+.light-mode .labs-section {
+  background-color: #88A5C7;
+}
+
+.labs-text {
+  margin-left: 11rem;
+  margin-right: 11rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+.dark-mode .labs-text {
+  color: #8da3af;
+}
+.light-mode .labs-text {
+  color: #556269;
+}
+
+body.scrolled .introduction-container {
+  margin-top: 6.25rem;
+}
