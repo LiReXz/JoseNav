@@ -285,14 +285,14 @@ header .logo {
 }
 
 .language-option {
-  color: #8da3af;
+  color: #556269; /* Same as nav-list in light mode by default */
   cursor: pointer;
   transition: color 0.3s ease;
   user-select: none;
 }
 
-.language-option:hover {
-  color: #a4aae0;
+.language-option:hover:not(.active) {
+  color: #000000; /* Same as nav-list hover in light mode */
 }
 .language-option.active {
   font-weight: bold;
@@ -304,8 +304,11 @@ header .logo {
 .light-mode .language-option.active {
   color: #F4A261;
 }
-.light-mode .language-option:hover {
-  color: #556269;
+.light-mode .language-option {
+  color: #556269; /* Same as nav-list */
+}
+.light-mode .language-option:hover:not(.active) {
+  color: #000000; /* Same as nav-list hover */
 }
 
 .language-separator {
@@ -317,8 +320,8 @@ header .logo {
   color: #c9d3d8;
 }
 
-.dark-mode .language-option:hover {
-  color: #ffffff;
+.dark-mode .language-option:hover:not(.active) {
+  color: #ffffff; /* Same as nav-list hover in dark mode */
 }
 
 .dark-mode .language-option.active {

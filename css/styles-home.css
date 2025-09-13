@@ -114,11 +114,11 @@
 .timeline::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: var(--timeline-start, 0);
   left: 50%;
   transform: translateX(-50%);
   width: 0.3125rem;
-  height: 0; /* Inicialmente sin altura, será calculada por JavaScript */
+  height: var(--timeline-height, 100%);
   z-index: 1;
 }
 .dark-mode .timeline::before {

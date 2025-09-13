@@ -44,6 +44,48 @@ function alignTimelinePoints() {
                 positionPoint.style.top = `${titleCenter}px`;
             }
         });
+
+        // Calculate timeline line height from first company point to last position point
+        // This needs to happen AFTER the points have been repositioned
+        setTimeout(() => {
+            const timeline = document.querySelector('.timeline');
+            const firstCompanyPoint = document.querySelector('.company-point');
+            const allPositionPoints = document.querySelectorAll('.position-point');
+            const lastPositionPoint = allPositionPoints[allPositionPoints.length - 1];
+            
+            if (timeline && firstCompanyPoint && lastPositionPoint) {
+                // Get the actual computed positions of the points after they've been moved by the script
+                const firstPointTop = parseFloat(firstCompanyPoint.style.top) || 0;
+                const lastPointTop = parseFloat(lastPositionPoint.style.top) || 0;
+                
+                // Find the parent elements to calculate the relative positions correctly
+                const firstCompanyHeader = firstCompanyPoint.closest('.company-header');
+                const lastPositionHeader = lastPositionPoint.closest('.position-header');
+                
+                if (firstCompanyHeader && lastPositionHeader) {
+                    const timelineRect = timeline.getBoundingClientRect();
+                    const firstHeaderRect = firstCompanyHeader.getBoundingClientRect();
+                    const lastHeaderRect = lastPositionHeader.getBoundingClientRect();
+                    
+                    // Calculate the absolute positions of the point centers
+                    const startY = (firstHeaderRect.top - timelineRect.top) + firstPointTop;
+                    const endY = (lastHeaderRect.top - timelineRect.top) + lastPointTop;
+                    const lineHeight = endY - startY;
+                    
+                    console.log('Timeline calculation:', {
+                        startY,
+                        endY,
+                        lineHeight,
+                        firstPointTop,
+                        lastPointTop
+                    });
+                    
+                    // Set CSS variables for the timeline line
+                    timeline.style.setProperty('--timeline-start', `${startY}px`);
+                    timeline.style.setProperty('--timeline-height', `${lineHeight}px`);
+                }
+            }
+        }, 10); // Small delay to ensure points are positioned first
     });
 }
 
