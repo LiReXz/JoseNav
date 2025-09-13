@@ -1,5 +1,6 @@
-// Seleccionar el header
+// Seleccionar el header y el body
 const header = document.querySelector("header");
+const body = document.querySelector("body");
 // Define la cantidad de rem después de la cual el header cambia el padding y el fondo
 const scrollThreshold = 1.25; // 20px convertido a rem
 

@@ -1,5 +1,11 @@
 body {
-  overflow-x: hidden; /* Oculta cualquier contenido que sobresalga horizontalmente */
+  overflow-x: hidden !important; /* Oculta cualquier contenido que sobresalga horizontalmente */
+}
+
+/* Preserve sticky header behavior */
+body.scrolled {
+  overflow-x: hidden !important;
+  padding-top: 0rem !important; /* No padding for contact page */
 }
 .introduction-container {
     display: flex;

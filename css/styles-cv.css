@@ -1,78 +1,127 @@
+/* CV Page Styles - Based on collaborations page structure */
+
 body {
-    overflow-x: hidden; /* Oculta cualquier contenido que sobresalga horizontalmente */
-  }
+    overflow-x: hidden !important;
+}
+
+/* Introduction container - EXACT copy from styles-collaborations.css */
 .introduction-container {
-    display: flex;
-    margin-left: 6rem;
-    margin-right: 6rem;
-    align-items: center; /* Centra verticalmente el texto y la imagen */
-    text-decoration: none; /* Quita el subrayado del enlace */
-    font-family: 'Oswald';
-    font-size: 4rem;
-    width: 100%;
-    gap: 6rem;
-  }
-  .dark-mode .introduction-container {
-    color: white;
-  }
-  .light-mode .introduction-container {
-    color: #000000;
-  }
-  .section-line {
-    margin-top: 1.25rem;
-    width: 15rem; /* Ancho completo del contenedor */
-    height: 0.5rem; /* Altura de la línea */
-    border-radius: 10rem;
-  }
-  .dark-mode .section-line {
-    background-color: #7fff00;
-  }
-  .light-mode .section-line {
-    background-color: #F4A261;
-  }
-/* Estilo de la imagen */
-.introduction-image {
-    width: 8rem; /* Tamaño del contenedor */
-    height: auto;
+  display: flex;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  align-items: center; /* Centra verticalmente el texto y la imagen */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  font-family: 'Oswald';
+  font-size: 4rem;
+  width: 100%;
+  gap: 6rem;
+}
+.dark-mode .introduction-container {
+  color: white;
+}
+.light-mode .introduction-container {
+  color: #000000;
 }
 
-.introduction-image a {
-    display: block; /* Hace que el enlace cubra toda la imagen */
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+/* Section title styling - EXACT copy from styles-collaborations.css */
+.section {
+  white-space: nowrap;
+  font-family: 'Oswald';
+  font-size: 3rem;
+}
+.dark-mode .section {
+  color: white;
+}
+.light-mode .section {
+  color: #000000;
 }
 
-.introduction-image-img {
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Elimina el espacio blanco inferior de la imagen */
-    filter: brightness(0.5); /* Inicialmente, la imagen tiene brillo reducido */
-    transition: filter 0.5s ease; /* Suaviza el cambio de brillo */
+.section-line {
+  margin-top: 1.25rem;
+  width: 15rem; /* Ancho completo del contenedor */
+  height: 0.5rem; /* Altura de la línea */
+  border-radius: 10rem;
 }
-.dark-mode .introduction-image-img {
-    content: url('../media/download-dark.png');
-    filter: brightness(0.5); /* Verde con brillo reducido en dark mode */
+.dark-mode .section-line {
+  background-color: #7fff00;
 }
-.light-mode .introduction-image-img {
-    content: url('../media/download-light.png');
-    filter: brightness(0.5); /* Brillo reducido en light mode, usando imagen naranja */
+.light-mode .section-line {
+  background-color: #F4A261;
 }
-.introduction-image:hover .introduction-image-img {
-    filter: brightness(1); /* Aumenta el brillo de la imagen */
-}
-.dark-mode .introduction-image:hover .introduction-image-img {
-    filter: brightness(1); /* Verde brillante en dark mode hover */
-}
-.light-mode .introduction-image:hover .introduction-image-img {
-    filter: brightness(1); /* Naranja brillante en light mode hover */
-}
-.cv-image {
-    width: 60rem;
-    display: block; /* Asegura que la imagen se comporte como un bloque */
-    margin-left: auto;
-    margin-right: auto; /* Centra la imagen */
-}
+
+/* Scrolled state styling - from styles-collaborations.css */
 body.scrolled .introduction-container {
-    margin-top: 6.25rem;
+  margin-top: 6.25rem;
+}
+
+/* CV content container */
+.cv-content {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+/* CV image preview - centered on X axis with responsive margins */
+.cv-image {
+    width: 50rem;
+    max-width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-image:hover {
+    transform: scale(1.02);
+}
+
+.dark-mode .cv-image {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .cv-image:hover {
+    box-shadow: 0 0 20px rgba(127, 255, 0, 0.8); /* Green glow border effect */
+}
+
+.light-mode .cv-image:hover {
+    box-shadow: 0 0 20px rgba(244, 162, 97, 0.8); /* Orange glow border effect */
+}
+
+/* Responsive design - matching styles-collaborations.css */
+@media screen and (max-width: 1600px) {
+    .introduction-container,
+    .cv-content {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .introduction-container,
+    .cv-content {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    
+    .cv-image {
+        width: 40rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .introduction-container,
+    .cv-content {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    .cv-image {
+        width: 35rem;
+    }
+    
+    .section {
+        font-size: 2.5rem;
+    }
 }

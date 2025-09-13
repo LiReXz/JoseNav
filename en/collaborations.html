@@ -1,26 +1,12 @@
 <!DOCTYPE html>
-<html            <nav>
-                <ul class="nav-list">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./laboratories.html">Laboratories</a></li>
-                    <li class="active"><a href="./collaborations.html">Collaborations</a></li>
-                    <li><a href="./cv.html">CV</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="language-toggle-container">
-                <span class="language-option active" data-lang="en">EN</span>
-                <span class="language-separator">|</span>
-                <span class="language-option" data-lang="es">ES</span>
-            </div>
-            <div class="theme-toggle-container">>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>José Navarro Pavón - DevOps</title>
-    <link id="favicon" rel="icon" href="media/logo-url-dark.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/styles-collaborations.css">
+    <link id="favicon" rel="icon" href="../media/logo-url-dark.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/styles-generic.css">
+    <link rel="stylesheet" href="../css/styles-collaborations.css">
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +17,7 @@
 <body class="dark-mode">
      <header id="header">
         <a href="index.html" class="logo-link">
-            <img src="./media/logo-url-dark.png" class="logo">
+            <img src="../media/logo-url-dark.png" class="logo">
         </a>
         <div class="header-buttons">
             <nav>
@@ -49,39 +35,89 @@
                 <span class="language-option" data-lang="es">ES</span>
             </div>
             <div class="theme-toggle-container">
-                <i class="fas fa-sun sun-icon"></i> <!-- Icono de sol -->
+                <i class="fas fa-sun sun-icon"></i>
                 <div class="moving-bar" id="toggle-bar">
-                  <div class="slider-point"></div> <!-- El punto deslizante -->
+                  <div class="slider-point"></div>
                 </div>
-                <i class="fas fa-moon moon-icon"></i> <!-- Icono de luna -->
+                <i class="fas fa-moon moon-icon"></i>
             </div>
         </div>
     </header>
-    <div style="height: 9.375rem;"></div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <div class="hola">
-        <h1>hola</h1><img src="../media/logo-dark.png">
+    <div style="height: 6.25rem;"></div>
+    
+    <div class="introduction-container">
+        <div class="section">Collaborations
+            <div style="height: 1.25rem;"></div>
+            <div class="section-line"></div>
+        </div>
     </div>
-    <div style="height: 2000px;">a</div>
-    <!-- <div class="cv-link">
-        <a href="docs/cv.pdf" target="_blank">CV</a>
+    
+    <div style="height: 2rem;"></div>
+    
+    <!-- Dummy content indicator -->
+    <div class="dummy-content-indicator">
+        * Sample content - Under development
     </div>
-    <section id="about">
-        <h2>About me</h2>
-        <p>Hello! I'm Jose, a DevOps enthusiast with a passion for CI/CD and cloud environments like AWS and Azure. 
-           I enjoy automating processes, ensuring seamless deployments, and following best practices.
-           Constantly learning and exploring new technologies, I'm dedicated to building efficient, scalable, and robust solutions.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>How to work with Terraform Modules</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit varius risus</p>
+    
+    <!-- Collaborations content -->
+    <div class="collaborations-content">
+        
+        <!-- Collaboration 1 -->
+        <div class="collaboration-item">
+            <h3 class="collaboration-title">
+                CI/CD Pipeline Optimization
+            </h3>
+            <p class="collaboration-description">
+                Collaborated on improving continuous integration processes for development teams, 
+                reducing deployment times by 40% through implementation of parallelization strategies 
+                and Docker container optimization.
+            </p>
+            <div class="tech-tags">
+                <span class="tech-tag">Jenkins</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Kubernetes</span>
+            </div>
         </div>
 
-         More projects to be added... 
-    </section> -->
+        <!-- Collaboration 2 -->
+        <div class="collaboration-item">
+            <h3 class="collaboration-title">
+                AWS Cloud Migration
+            </h3>
+            <p class="collaboration-description">
+                Participated in migrating on-premises infrastructure to AWS, designing scalable 
+                architectures and implementing security and monitoring best practices for 
+                critical applications.
+            </p>
+            <div class="tech-tags">
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">Terraform</span>
+                <span class="tech-tag">CloudWatch</span>
+            </div>
+        </div>
+
+        <!-- Collaboration 3 -->
+        <div class="collaboration-item">
+            <h3 class="collaboration-title">
+                Deployment Automation
+            </h3>
+            <p class="collaboration-description">
+                Developed automation scripts and tools for multi-environment deployments, 
+                integrating automatic validations and rollback capabilities to ensure 
+                application stability in production.
+            </p>
+            <div class="tech-tags">
+                <span class="tech-tag">GitHub Actions</span>
+                <span class="tech-tag">Ansible</span>
+                <span class="tech-tag">Helm</span>
+            </div>
+        </div>
+
+    </div>
+    
+    <div style="height: 6rem;"></div>
+        <div style="height: 6rem;"></div>
+
     <footer class="footer">
         <div class="footer-content">
           <p class="copyright">© 2024 José Navarro Pavón. All Rights Reserved.</p>
@@ -95,3 +131,4 @@
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/language-toggle.js"></script>
 </body>
+</html>

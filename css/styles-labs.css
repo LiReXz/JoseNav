@@ -1,6 +1,12 @@
 /* Labs page specific styles */
 body {
-  overflow-x: hidden; /* Oculta cualquier contenido que sobresalga horizontalmente */
+  overflow-x: hidden !important; /* Oculta cualquier contenido que sobresalga horizontalmente */
+}
+
+/* Preserve sticky header behavior */
+body.scrolled {
+  overflow-x: hidden !important;
+  padding-top: 0rem !important; /* No padding for labs page */
 }
 
 .introduction-container {
@@ -18,6 +24,19 @@ body {
   color: white;
 }
 .light-mode .introduction-container {
+  color: #000000;
+}
+
+/* Section title styling */
+.section {
+  white-space: nowrap;
+  font-family: 'Oswald';
+  font-size: 3rem;
+}
+.dark-mode .section {
+  color: white;
+}
+.light-mode .section {
   color: #000000;
 }
 
@@ -63,4 +82,121 @@ body {
 
 body.scrolled .introduction-container {
   margin-top: 6.25rem;
+}
+
+/* Content placeholder styles */
+.content-placeholder {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  font-size: 1.2rem;
+}
+.dark-mode .content-placeholder {
+  color: #8da3af;
+}
+.light-mode .content-placeholder {
+  color: #556269;
+}
+
+/* Future laboratory content styles */
+.lab-item {
+  margin-bottom: 3rem;
+}
+
+.lab-title {
+  font-family: 'Oswald';
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.dark-mode .lab-title {
+  color: #7fff00;
+}
+.light-mode .lab-title {
+  color: #F4A261;
+}
+
+.lab-description {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.dark-mode .lab-description {
+  color: #8da3af;
+}
+.light-mode .lab-description {
+  color: #556269;
+}
+
+.lab-status {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.dark-mode .lab-status {
+  color: #7fff00;
+}
+.light-mode .lab-status {
+  color: #F4A261;
+}
+
+/* Tech tags for labs (similar to collaborations) */
+.lab-tech-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.lab-tech-tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.dark-mode .lab-tech-tag {
+  background: #7fff00;
+  color: black;
+}
+.light-mode .lab-tech-tag {
+  background: #F4A261;
+  color: white;
+}
+
+/* Responsive design for laboratories */
+@media screen and (max-width: 1600px) {
+  .content-placeholder,
+  .labs-text {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content-placeholder,
+  .labs-text {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  
+  .lab-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-placeholder,
+  .labs-text {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .lab-title {
+    font-size: 1.4rem;
+  }
+  
+  .lab-tech-tags {
+    gap: 0.3rem;
+  }
+  
+  .lab-tech-tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
 }

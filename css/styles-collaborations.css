@@ -1,6 +1,12 @@
 /* Collaborations page specific styles */
 body {
-  overflow-x: hidden; /* Oculta cualquier contenido que sobresalga horizontalmente */
+  overflow-x: hidden !important; /* Oculta cualquier contenido que sobresalga horizontalmente */
+}
+
+/* Preserve sticky header behavior */
+body.scrolled {
+  overflow-x: hidden !important;
+  padding-top: 0rem !important; /* No padding for collaborations page */
 }
 
 .introduction-container {
@@ -18,6 +24,19 @@ body {
   color: white;
 }
 .light-mode .introduction-container {
+  color: #000000;
+}
+
+/* Section title styling */
+.section {
+  white-space: nowrap;
+  font-family: 'Oswald';
+  font-size: 3rem;
+}
+.dark-mode .section {
+  color: white;
+}
+.light-mode .section {
   color: #000000;
 }
 
@@ -63,4 +82,120 @@ body {
 
 body.scrolled .introduction-container {
   margin-top: 6.25rem;
+}
+
+/* Dummy content indicator styles */
+.dummy-content-indicator {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+.dark-mode .dummy-content-indicator {
+  color: #7fff00;
+}
+.light-mode .dummy-content-indicator {
+  color: #F4A261;
+}
+
+/* Collaborations content styles */
+.collaborations-content {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+/* Individual collaboration item styles */
+.collaboration-item {
+  margin-bottom: 3rem;
+}
+
+.collaboration-title {
+  font-family: 'Oswald';
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.dark-mode .collaboration-title {
+  color: #7fff00;
+}
+.light-mode .collaboration-title {
+  color: #F4A261;
+}
+
+.collaboration-description {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.dark-mode .collaboration-description {
+  color: #8da3af;
+}
+.light-mode .collaboration-description {
+  color: #556269;
+}
+
+/* Tech tags styles */
+.tech-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tech-tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.dark-mode .tech-tag {
+  background: #7fff00;
+  color: black;
+}
+.light-mode .tech-tag {
+  background: #F4A261;
+  color: white;
+}
+
+/* Responsive design for collaborations */
+@media screen and (max-width: 1600px) {
+  .dummy-content-indicator,
+  .collaborations-content,
+  .collaborations-text {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .dummy-content-indicator,
+  .collaborations-content,
+  .collaborations-text {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  
+  .collaboration-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dummy-content-indicator,
+  .collaborations-content,
+  .collaborations-text {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .collaboration-title {
+    font-size: 1.4rem;
+  }
+  
+  .tech-tags {
+    gap: 0.3rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
 }
