@@ -1,10 +1,33 @@
-/* CV Page Styles - Based on collaborations page structure */
-
+/* CV page specific styles - Override generic body margins */
 body {
-    overflow-x: hidden !important;
+  overflow-x: hidden !important;
+  /* Reset body margins completely - CV elements handle their own margins */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-/* Introduction container - EXACT copy from styles-collaborations.css */
+/* Preserve sticky header behavior */
+body.scrolled {
+  overflow-x: hidden !important;
+  padding-top: 0rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Adjust header to align with reset body margins */
+header {
+  margin-left: 6rem !important;
+  margin-right: 6rem !important;
+}
+
+header.scrolled {
+  margin-left: 6rem !important;
+  margin-right: 6rem !important;
+}
+
+/* Introduction container */
 .introduction-container {
   display: flex;
   margin-left: 6rem;
@@ -23,23 +46,27 @@ body {
   color: #000000;
 }
 
-/* Section title styling - EXACT copy from styles-collaborations.css */
-.section {
+/* Section title styling */
+.introduction-container .section {
   white-space: nowrap;
   font-family: 'Oswald';
   font-size: 3rem;
+  margin: 0;
+  padding: 0;
 }
-.dark-mode .section {
+.dark-mode .introduction-container .section {
   color: white;
 }
-.light-mode .section {
+.light-mode .introduction-container .section {
   color: #000000;
 }
 
 .section-line {
   margin-top: 1.25rem;
-  width: 15rem; /* Ancho completo del contenedor */
-  height: 0.5rem; /* Altura de la línea */
+  margin-left: 0;
+  margin-right: 0;
+  width: 15rem;
+  height: 0.5rem;
   border-radius: 10rem;
 }
 .dark-mode .section-line {
@@ -49,15 +76,32 @@ body {
   background-color: #F4A261;
 }
 
-/* Scrolled state styling - from styles-collaborations.css */
 body.scrolled .introduction-container {
   margin-top: 6.25rem;
 }
 
-/* CV content container */
+/* Dummy content indicator */
+.dummy-content-indicator {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  font-family: 'Inconsolata';
+  font-size: 1.2rem;
+  font-style: italic;
+  opacity: 0.6;
+  margin-bottom: 2rem;
+}
+.dark-mode .dummy-content-indicator {
+  color: #cccccc;
+}
+.light-mode .dummy-content-indicator {
+  color: #666666;
+}
+
+/* CV content - specific for CV image display */
 .cv-content {
   margin-left: 6rem;
   margin-right: 6rem;
+  padding: 0;
 }
 
 /* CV image preview - centered on X axis with responsive margins */
@@ -89,39 +133,68 @@ body.scrolled .introduction-container {
     box-shadow: 0 0 20px rgba(244, 162, 97, 0.8); /* Orange glow border effect */
 }
 
-/* Responsive design - matching styles-collaborations.css */
+/* Responsive design */
 @media screen and (max-width: 1600px) {
-    .introduction-container,
-    .cv-content {
-        margin-left: 4rem;
-        margin-right: 4rem;
-    }
+  .dummy-content-indicator,
+  .cv-content {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  
+  .introduction-container {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  
+  header,
+  header.scrolled {
+    margin-left: 4rem !important;
+    margin-right: 4rem !important;
+  }
 }
 
 @media screen and (max-width: 1200px) {
-    .introduction-container,
-    .cv-content {
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
-    
-    .cv-image {
-        width: 40rem;
-    }
+  .dummy-content-indicator,
+  .cv-content {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  
+  .introduction-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  
+  header,
+  header.scrolled {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+  }
+
+  .cv-image {
+    width: 40rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .introduction-container,
-    .cv-content {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-    
-    .cv-image {
-        width: 35rem;
-    }
-    
-    .section {
-        font-size: 2.5rem;
-    }
+  .dummy-content-indicator,
+  .cv-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .introduction-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  header,
+  header.scrolled {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+  
+  .cv-image {
+    width: 35rem;
+  }
 }

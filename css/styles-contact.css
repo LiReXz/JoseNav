@@ -127,14 +127,14 @@ body.scrolled {
   .dark-mode #contact-me-form input[type="email"],
   .dark-mode #contact-me-form textarea {
       border: 0.1rem solid #7fff00;
-      background-color: #252734;
+      background-color: #1a1d26;
       color: white;
   }
   .light-mode #contact-me-form input[type="text"],
   .light-mode #contact-me-form input[type="email"],
   .light-mode #contact-me-form textarea {
       border: 0.1rem solid #F4A261;
-      background-color: #ffffff;
+      background-color: #f5f5f5;
       color: #000000;
   }
   #contact-me-form textarea {
@@ -169,3 +169,17 @@ body.scrolled {
   body.scrolled .introduction-container{
     margin-top: 6.25rem;
   }
+/* Section title styling - same as laboratories */
+.introduction-container .section {
+  white-space: nowrap;
+  font-family: 'Oswald';
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+.dark-mode .introduction-container .section {
+  color: white;
+}
+.light-mode .introduction-container .section {
+  color: #000000;
+}

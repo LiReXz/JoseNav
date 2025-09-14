@@ -28,22 +28,26 @@ body.scrolled {
 }
 
 /* Section title styling */
-.section {
+.introduction-container .section {
   white-space: nowrap;
   font-family: 'Oswald';
   font-size: 3rem;
+  margin: 0;
+  padding: 0;
 }
-.dark-mode .section {
+.dark-mode .introduction-container .section {
   color: white;
 }
-.light-mode .section {
+.light-mode .introduction-container .section {
   color: #000000;
 }
 
 .section-line {
   margin-top: 1.25rem;
-  width: 15rem; /* Ancho completo del contenedor */
-  height: 0.5rem; /* Altura de la línea */
+  margin-left: 0;
+  margin-right: 0;
+  width: 15rem;
+  height: 0.5rem;
   border-radius: 10rem;
 }
 .dark-mode .section-line {
@@ -157,6 +161,48 @@ body.scrolled .introduction-container {
 .light-mode .lab-tech-tag {
   background: #F4A261;
   color: white;
+}
+
+/* CV image styles for cv-test.html */
+.cv-image {
+    width: 50rem;
+    max-width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-image:hover {
+    transform: scale(1.02);
+}
+
+.dark-mode .cv-image {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .cv-image:hover {
+    box-shadow: 0 0 20px rgba(127, 255, 0, 0.8); /* Green glow border effect */
+}
+
+.light-mode .cv-image:hover {
+    box-shadow: 0 0 20px rgba(244, 162, 97, 0.8); /* Orange glow border effect */
+}
+
+/* Responsive CV image sizing */
+@media screen and (max-width: 1200px) {
+  .cv-image {
+    width: 40rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cv-image {
+    width: 35rem;
+  }
 }
 
 /* Responsive design for laboratories */

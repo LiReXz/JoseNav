@@ -1,12 +1,30 @@
-/* Collaborations page specific styles */
+/* Collaborations page specific styles - Override generic body margins */
 body {
-  overflow-x: hidden !important; /* Oculta cualquier contenido que sobresalga horizontalmente */
+  overflow-x: hidden !important;
+  /* Reset body margins completely - collaboration elements handle their own margins */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* Preserve sticky header behavior */
 body.scrolled {
   overflow-x: hidden !important;
-  padding-top: 0rem !important; /* No padding for collaborations page */
+  padding-top: 0rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Adjust header to align with reset body margins */
+header {
+  margin-left: 6rem !important;
+  margin-right: 6rem !important;
+}
+
+header.scrolled {
+  margin-left: 6rem !important;
+  margin-right: 6rem !important;
 }
 
 .introduction-container {
@@ -28,22 +46,26 @@ body.scrolled {
 }
 
 /* Section title styling */
-.section {
+.introduction-container .section {
   white-space: nowrap;
   font-family: 'Oswald';
   font-size: 3rem;
+  margin: 0;
+  padding: 0;
 }
-.dark-mode .section {
+.dark-mode .introduction-container .section {
   color: white;
 }
-.light-mode .section {
+.light-mode .introduction-container .section {
   color: #000000;
 }
 
 .section-line {
   margin-top: 1.25rem;
-  width: 15rem; /* Ancho completo del contenedor */
-  height: 0.5rem; /* Altura de la línea */
+  margin-left: 0;
+  margin-right: 0;
+  width: 15rem;
+  height: 0.5rem;
   border-radius: 10rem;
 }
 .dark-mode .section-line {
@@ -84,13 +106,19 @@ body.scrolled .introduction-container {
   margin-top: 6.25rem;
 }
 
-/* Dummy content indicator styles */
+/* Dummy content indicator - EXACT alignment */
 .dummy-content-indicator {
-  margin-left: 6rem;
-  margin-right: 6rem;
+  margin-left: 6rem !important;
+  margin-right: 6rem !important;
+  margin-bottom: 2rem;
+  margin-top: 0;
   font-size: 0.9rem;
   font-style: italic;
-  margin-bottom: 2rem;
+  padding-left: 0 !important;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
 }
 .dark-mode .dummy-content-indicator {
   color: #7fff00;
@@ -99,21 +127,29 @@ body.scrolled .introduction-container {
   color: #F4A261;
 }
 
-/* Collaborations content styles */
+/* Collaborations content - simplified */
 .collaborations-content {
-  margin-left: 6rem;
-  margin-right: 6rem;
+  margin: 0;
+  padding: 0;
 }
 
-/* Individual collaboration item styles */
+/* Individual collaboration item */
 .collaboration-item {
   margin-bottom: 3rem;
+  padding: 0;
 }
 
+/* Collaboration titles - EXACT alignment with dummy-content-indicator */
 .collaboration-title {
   font-family: 'Oswald';
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  margin-left: 6rem !important;
+  margin-right: 6rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  display: block;
 }
 .dark-mode .collaboration-title {
   color: #7fff00;
@@ -122,9 +158,15 @@ body.scrolled .introduction-container {
   color: #F4A261;
 }
 
+/* Collaboration descriptions */
 .collaboration-description {
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin: 0 6rem 1rem 6rem;
+  padding: 0;
+  text-indent: 0;
+  display: block;
+  width: auto;
+  box-sizing: border-box;
 }
 .dark-mode .collaboration-description {
   color: #8da3af;
@@ -133,11 +175,16 @@ body.scrolled .introduction-container {
   color: #556269;
 }
 
-/* Tech tags styles */
+/* Tech tags - EXACT alignment with dummy-content-indicator */
 .tech-tags {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  margin-left: 6rem !important;
+  margin-right: 6rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
 }
 
 .tech-tag {
@@ -155,32 +202,71 @@ body.scrolled .introduction-container {
   color: white;
 }
 
+/* Ensure all paragraphs inside collaborations have consistent margins */
+.collaborations-content p,
+.collaboration-item p {
+  margin: 0 6rem 1rem 6rem !important;
+  padding: 0 !important;
+  text-indent: 0 !important;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+/* Force alignment for ALL text elements in collaborations - MOST SPECIFIC RULE */
+.collaborations-content .collaboration-item p.collaboration-description {
+  margin-left: 6rem !important;
+  margin-right: 6rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+  padding: 0 !important;
+  text-indent: 0 !important;
+}
+
 /* Responsive design for collaborations */
 @media screen and (max-width: 1600px) {
   .dummy-content-indicator,
-  .collaborations-content,
   .collaborations-text {
     margin-left: 4rem;
     margin-right: 4rem;
+  }
+  
+  .collaboration-title,
+  .collaboration-description,
+  .tech-tags {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  
+  .collaborations-content p,
+  .collaboration-item p {
+    margin-left: 4rem !important;
+    margin-right: 4rem !important;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .dummy-content-indicator,
-  .collaborations-content,
   .collaborations-text {
     margin-left: 2rem;
     margin-right: 2rem;
   }
   
-  .collaboration-title {
-    font-size: 1.6rem;
+  .collaboration-title,
+  .collaboration-description,
+  .tech-tags {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  
+  .collaborations-content p,
+  .collaboration-item p {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .dummy-content-indicator,
-  .collaborations-content,
   .collaborations-text {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -188,6 +274,20 @@ body.scrolled .introduction-container {
   
   .collaboration-title {
     font-size: 1.4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .collaboration-description,
+  .tech-tags {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .collaborations-content p,
+  .collaboration-item p {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
   }
   
   .tech-tags {
