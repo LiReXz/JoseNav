@@ -60,57 +60,97 @@
         * Sample content - Under development
     </div>
     
-    <!-- Collaborations content -->
-    <div class="collaborations-content">
+    <!-- Technology Filter -->
+    <div class="technology-filter">
+        <div class="filter-title">Filter by Technology:</div>
+        <div class="filter-tags">
+            <span class="filter-tag active" data-tech="all">All</span>
+            <span class="filter-tag" data-tech="kubernetes">Kubernetes</span>
+            <span class="filter-tag" data-tech="docker">Docker</span>
+            <span class="filter-tag" data-tech="terraform">Terraform</span>
+            <span class="filter-tag" data-tech="aws">AWS</span>
+            <span class="filter-tag" data-tech="jenkins">Jenkins</span>
+            <span class="filter-tag" data-tech="ansible">Ansible</span>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Collaborations Grid -->
+    <div class="collaborations-grid">
         
         <!-- Collaboration 1 -->
-        <div class="collaboration-item">
-            <h3 class="collaboration-title">
-                CI/CD Pipeline Optimization
-            </h3>
-            <p class="collaboration-description">
-                Collaborated on improving continuous integration processes for development teams, 
-                reducing deployment times by 40% through implementation of parallelization strategies 
-                and Docker container optimization.
-            </p>
-            <div class="tech-tags">
-                <span class="tech-tag">Jenkins</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">Kubernetes</span>
+        <div class="collaboration-item" data-tech="jenkins docker kubernetes">
+            <div class="collaboration-gif">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=CI%2FCD+Optimization" alt="Collaboration Demo" class="collaboration-gif-image">
+            </div>
+            <div class="collaboration-content">
+                <h3 class="collaboration-title">CI/CD Pipeline Optimization</h3>
+                <p class="collaboration-description">
+                    Collaborated on improving continuous integration processes for development teams, 
+                    reducing deployment times by 40% through parallelization strategies.
+                </p>
+                <div class="collaboration-tech-tags">
+                    <span class="tag-jenkins">Jenkins</span>
+                    <span class="tag-docker">Docker</span>
+                    <span class="tag-kubernetes">Kubernetes</span>
+                </div>
             </div>
         </div>
 
         <!-- Collaboration 2 -->
-        <div class="collaboration-item">
-            <h3 class="collaboration-title">
-                AWS Cloud Migration
-            </h3>
-            <p class="collaboration-description">
-                Participated in migrating on-premises infrastructure to AWS, designing scalable 
-                architectures and implementing security and monitoring best practices for 
-                critical applications.
-            </p>
-            <div class="tech-tags">
-                <span class="tech-tag">AWS</span>
-                <span class="tech-tag">Terraform</span>
-                <span class="tech-tag">CloudWatch</span>
+        <div class="collaboration-item" data-tech="aws terraform">
+            <div class="collaboration-gif">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=AWS+Migration" alt="Collaboration Demo" class="collaboration-gif-image">
+            </div>
+            <div class="collaboration-content">
+                <h3 class="collaboration-title">AWS Cloud Migration</h3>
+                <p class="collaboration-description">
+                    Participated in migrating on-premises infrastructure to AWS, designing scalable 
+                    architectures and implementing security best practices.
+                </p>
+                <div class="collaboration-tech-tags">
+                    <span class="tag-aws">AWS</span>
+                    <span class="tag-terraform">Terraform</span>
+                </div>
             </div>
         </div>
 
         <!-- Collaboration 3 -->
-        <div class="collaboration-item">
-            <h3 class="collaboration-title">
-                Deployment Automation
-            </h3>
-            <p class="collaboration-description">
-                Developed automation scripts and tools for multi-environment deployments, 
-                integrating automatic validations and rollback capabilities to ensure 
-                application stability in production.
-            </p>
-            <div class="tech-tags">
-                <span class="tech-tag">GitHub Actions</span>
-                <span class="tech-tag">Ansible</span>
-                <span class="tech-tag">Helm</span>
+        <div class="collaboration-item" data-tech="ansible jenkins docker">
+            <div class="collaboration-gif">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=Deployment+Automation" alt="Collaboration Demo" class="collaboration-gif-image">
+            </div>
+            <div class="collaboration-content">
+                <h3 class="collaboration-title">Deployment Automation</h3>
+                <p class="collaboration-description">
+                    Developed automation scripts and tools for multi-environment deployments, 
+                    integrating automatic validations and rollback capabilities.
+                </p>
+                <div class="collaboration-tech-tags">
+                    <span class="tag-ansible">Ansible</span>
+                    <span class="tag-jenkins">Jenkins</span>
+                    <span class="tag-docker">Docker</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collaboration 4 -->
+        <div class="collaboration-item" data-tech="kubernetes terraform aws">
+            <div class="collaboration-gif">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=K8s+Infrastructure" alt="Collaboration Demo" class="collaboration-gif-image">
+            </div>
+            <div class="collaboration-content">
+                <h3 class="collaboration-title">Kubernetes Infrastructure Setup</h3>
+                <p class="collaboration-description">
+                    Joint effort to establish enterprise-grade Kubernetes clusters on AWS 
+                    with automated scaling, monitoring, and disaster recovery.
+                </p>
+                <div class="collaboration-tech-tags">
+                    <span class="tag-kubernetes">Kubernetes</span>
+                    <span class="tag-terraform">Terraform</span>
+                    <span class="tag-aws">AWS</span>
+                </div>
             </div>
         </div>
 
@@ -131,5 +171,6 @@
     <script src="../scripts/scroll.js"></script>
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/language-toggle.js"></script>
+    <script src="../scripts/technology-filter.js"></script>
 </body>
 </html>

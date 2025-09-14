@@ -54,8 +54,104 @@
     
     <div style="height: 4rem;"></div>
     
-    <div class="content-placeholder">
-        <p>Laboratories content coming soon...</p>
+    <!-- Dummy content indicator -->
+    <div class="dummy-content-indicator">
+        * Sample content - Under development
+    </div>
+    
+    <!-- Technology Filter -->
+    <div class="technology-filter">
+        <div class="filter-title">Filter by Technology:</div>
+        <div class="filter-tags">
+            <span class="filter-tag active" data-tech="all">All</span>
+            <span class="filter-tag" data-tech="kubernetes">Kubernetes</span>
+            <span class="filter-tag" data-tech="docker">Docker</span>
+            <span class="filter-tag" data-tech="python">Python</span>
+            <span class="filter-tag" data-tech="terraform">Terraform</span>
+            <span class="filter-tag" data-tech="aws">AWS</span>
+            <span class="filter-tag" data-tech="jenkins">Jenkins</span>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Laboratories Grid -->
+    <div class="labs-grid">
+        
+        <!-- Laboratory 1 -->
+        <div class="lab-item" data-tech="kubernetes docker python">
+            <div class="lab-gif">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=K8s+Python+Demo" alt="Lab Demo" class="lab-gif-image">
+            </div>
+            <div class="lab-content">
+                <h3 class="lab-title">Deploying Python App in K8s</h3>
+                <p class="lab-description">
+                    Complete guide to containerizing a Python application and deploying it to Kubernetes 
+                    with ConfigMaps, Secrets, and persistent storage.
+                </p>
+                <div class="lab-tech-tags">
+                    <span class="tag-kubernetes">Kubernetes</span>
+                    <span class="tag-docker">Docker</span>
+                    <span class="tag-python">Python</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Laboratory 2 -->
+        <div class="lab-item" data-tech="terraform aws">
+            <div class="lab-gif">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=Terraform+AWS" alt="Lab Demo" class="lab-gif-image">
+            </div>
+            <div class="lab-content">
+                <h3 class="lab-title">Infrastructure as Code with Terraform</h3>
+                <p class="lab-description">
+                    Build scalable AWS infrastructure using Terraform modules, including VPC, EKS, 
+                    and RDS with automated deployment pipelines.
+                </p>
+                <div class="lab-tech-tags">
+                    <span class="tag-terraform">Terraform</span>
+                    <span class="tag-aws">AWS</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Laboratory 3 -->
+        <div class="lab-item" data-tech="jenkins docker kubernetes">
+            <div class="lab-gif">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=CI%2FCD+Pipeline" alt="Lab Demo" class="lab-gif-image">
+            </div>
+            <div class="lab-content">
+                <h3 class="lab-title">CI/CD Pipeline with Jenkins</h3>
+                <p class="lab-description">
+                    Set up automated CI/CD pipeline using Jenkins, Docker, and Kubernetes 
+                    with automated testing, building, and deployment stages.
+                </p>
+                <div class="lab-tech-tags">
+                    <span class="tag-jenkins">Jenkins</span>
+                    <span class="tag-docker">Docker</span>
+                    <span class="tag-kubernetes">Kubernetes</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Laboratory 4 -->
+        <div class="lab-item" data-tech="docker python">
+            <div class="lab-gif">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=Docker+Compose" alt="Lab Demo" class="lab-gif-image">
+            </div>
+            <div class="lab-content">
+                <h3 class="lab-title">Multi-Service App with Docker Compose</h3>
+                <p class="lab-description">
+                    Build a multi-container application using Docker Compose with Python backend, 
+                    Redis cache, PostgreSQL database, and Nginx reverse proxy.
+                </p>
+                <div class="lab-tech-tags">
+                    <span class="tag-docker">Docker</span>
+                    <span class="tag-python">Python</span>
+                </div>
+            </div>
+        </div>
+
     </div>
     
     <div style="height: 6rem;"></div>
@@ -72,4 +168,5 @@
     <script src="../scripts/scroll.js"></script>
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/language-toggle.js"></script>
+    <script src="../scripts/technology-filter.js"></script>
 </body>
