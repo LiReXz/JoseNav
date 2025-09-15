@@ -11,165 +11,92 @@
     document.body.classList.add('dark-mode');
     document.body.classList.remove('light-mode');
   }
-  
-  // Aplicar assets del tema inmediatamente cuando el DOM esté mínimamente listo
-  const applyThemeAssets = () => {
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    
-    // Assets paths
-    const assets = {
-      logo: {
-        dark: '../media/logo-url-dark.png',
-        light: '../media/logo-url-light.png'
-      },
-      favicon: {
-        dark: '../media/logo-url-dark.png',
-        light: '../media/logo-url-light.png'
-      },
-      homelogo: {
-        dark: '../media/logo-dark.png',
-        light: '../media/logo-light.png'
-      },
-      homelogoshadow: {
-        dark: '../media/logo-shadow-dark.png',
-        light: '../media/logo-shadow-light.png'
-      }
-    };
-    
-    // Actualizar el logo
-    const logo = document.querySelector('.logo');
-    if (logo) {
-      logo.src = isDarkMode ? assets.logo.dark : assets.logo.light;
-    }
-
-    // Actualizar el favicon
-    const favicon = document.getElementById('favicon');
-    if (favicon) {
-      favicon.href = isDarkMode ? assets.favicon.dark : assets.favicon.light;
-    }
-
-    // Actualizar el home-logo
-    const homelogo = document.querySelector('.home-logo');
-    if (homelogo) {
-      homelogo.src = isDarkMode ? assets.homelogo.dark : assets.homelogo.light;
-    }
-    
-    // Actualizar el home-logo-shadow
-    const homelogoshadow = document.querySelector('.home-logo-shadow');
-    if (homelogoshadow) {
-      homelogoshadow.src = isDarkMode ? assets.homelogoshadow.dark : assets.homelogoshadow.light;
-    }
-    
-    // Actualizar posición del slider
-    const sliderPoint = document.querySelector('.slider-point');
-    if (sliderPoint) {
-      const sunPosition = 2.5;
-      const moonPosition = 17;
-      const baseWidth = 1920;
-      const calculatePositionInRem = (positionPx) => {
-        return (positionPx / baseWidth) * 100;
-      };
-      
-      if (isDarkMode) {
-        sliderPoint.style.left = `${calculatePositionInRem(moonPosition)}rem`;
-      } else {
-        sliderPoint.style.left = `${calculatePositionInRem(sunPosition)}rem`;
-      }
-    }
-  };
-  
-  // Si el DOM ya está listo, aplicar inmediatamente
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', applyThemeAssets);
-  } else {
-    applyThemeAssets();
-  }
 })();
 
-// Esperar a que el DOM esté completamente cargado
+// Configuración principal cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM loaded, initializing theme script');
-  
-  // Selección de elementos del DOM
+  console.log('🎨 Theme system initializing...');
+
+  // Variables globales
+  const body = document.body;
+  const themeToggleContainer = document.querySelector('.theme-toggle-container');
+  const sliderPoint = document.querySelector('.slider-point');
   const sunIcon = document.querySelector('.sun-icon');
   const moonIcon = document.querySelector('.moon-icon');
-  const movingBar = document.querySelector('.moving-bar');
-  const sliderPoint = document.querySelector('.slider-point');
-  const body = document.body;
-  const toggleBar = document.getElementById('toggle-bar');
-  const themeToggleContainer = document.querySelector('.theme-toggle-container');
-  const favicon = document.getElementById('favicon');
+  
+  // Configuración de posiciones del slider
+  const sunPosition = 2.5;  // Posición para modo claro
+  const moonPosition = 17;  // Posición para modo oscuro
+  
+  // Auto-detect media path based on current URL depth
+  const pathDepth = window.location.pathname.split('/').filter(part => part !== '').length;
+  const isInSubfolder = pathDepth > 1 || window.location.pathname.includes('/labs/');
+  const mediaPath = isInSubfolder ? '../../media/' : '../media/';
+  
+  console.log('🔍 Path Detection:');
+  console.log(`   URL: ${window.location.pathname}`);
+  console.log(`   Media path: ${mediaPath}`);
+  console.log(`   Is in subfolder: ${isInSubfolder}`);
 
-  console.log('Elements found:', {
-    sunIcon: !!sunIcon,
-    moonIcon: !!moonIcon,
-    movingBar: !!movingBar,
-    sliderPoint: !!sliderPoint,
-    toggleBar: !!toggleBar,
-    themeToggleContainer: !!themeToggleContainer,
-    favicon: !!favicon
-  });
+  // Assets paths
+  const assets = {
+    logo: {
+      dark: mediaPath + 'logo-url-dark.png',
+      light: mediaPath + 'logo-url-light.png'
+    },
+    favicon: {
+      dark: mediaPath + 'logo-url-dark.png',
+      light: mediaPath + 'logo-url-light.png'
+    },
+    homelogo: {
+      dark: mediaPath + 'logo-dark.png',
+      light: mediaPath + 'logo-light.png'
+    },
+    homelogoshadow: {
+      dark: mediaPath + 'logo-shadow-dark.png',
+      light: mediaPath + 'logo-shadow-light.png'
+    }
+  };
 
-  // Configuración de posiciones del slider en rem
-  const sunPosition = 2.5;
-  const moonPosition = 17;
-
-  // Definición de la raíz en base a la resolución de 1920px
-  const baseFontSize = 16;
-  const baseWidth = 1920;
-
-  // Definimos las posiciones en función de la proporción del contenedor
+  // Función para calcular posición en rem
   const calculatePositionInRem = (positionPx) => {
+    const baseWidth = 1920;
     return (positionPx / baseWidth) * 100;
   };
 
-  // Centralización de rutas para imágenes y otros recursos
-  const assets = {
-    logo: {
-      dark: '../media/logo-url-dark.png',
-      light: '../media/logo-url-light.png'
-    },
-    favicon: {
-      dark: '../media/logo-url-dark.png',
-      light: '../media/logo-url-light.png'
-    },
-    homelogo: {
-      dark: '../media/logo-dark.png',
-      light: '../media/logo-light.png'
-    },
-    homelogoshadow: {
-      dark: '../media/logo-shadow-dark.png',
-      light: '../media/logo-shadow-light.png'
-    }
-  };
-
-  // Función para actualizar imágenes y favicon según el tema
+  // Función para actualizar todos los assets del tema
   const updateThemeAssets = () => {
     const isDarkMode = body.classList.contains('dark-mode');
+    console.log('🔄 Updating theme assets, dark mode:', isDarkMode);
     
-    // Actualizar el logo
+    // Actualizar logo principal
     const logo = document.querySelector('.logo');
     if (logo) {
       logo.src = isDarkMode ? assets.logo.dark : assets.logo.light;
+      console.log('✅ Logo updated to:', logo.src);
     }
 
-    // Actualizar el favicon
+    // Actualizar favicon
+    const favicon = document.getElementById('favicon');
     if (favicon) {
       favicon.href = isDarkMode ? assets.favicon.dark : assets.favicon.light;
+      console.log('✅ Favicon updated to:', favicon.href);
     }
 
-    // Actualizar el home-logo (solo si existe en la página)
+    // Actualizar home-logo (solo si existe)
     const homelogo = document.querySelector('.home-logo');
     if (homelogo) {
       homelogo.src = isDarkMode ? assets.homelogo.dark : assets.homelogo.light;
+      console.log('✅ Home logo updated to:', homelogo.src);
     }
     
-    // Actualizar el home-logo-shadow (solo si existe en la página)
+    // Actualizar home-logo-shadow (solo si existe)
     const homelogoshadow = document.querySelector('.home-logo-shadow');
     if (homelogoshadow) {
       homelogoshadow.src = isDarkMode ? assets.homelogoshadow.dark : assets.homelogoshadow.light;
+      console.log('✅ Home logo shadow updated to:', homelogoshadow.src);
     }
-    
+
     // Actualizar posición del slider
     if (sliderPoint) {
       if (isDarkMode) {
@@ -177,112 +104,89 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         sliderPoint.style.left = `${calculatePositionInRem(sunPosition)}rem`;
       }
+      console.log('✅ Slider position updated to:', sliderPoint.style.left);
     }
   };
 
-  // Función para alternar entre temas (claro/oscuro)
-  const toggleTheme = () => {
-    if (body.classList.contains('dark-mode')) {
-      body.classList.remove('dark-mode');
-      body.classList.add('light-mode');
-      saveTheme('light');
-    } else {
-      body.classList.remove('light-mode');
-      body.classList.add('dark-mode');
-      saveTheme('dark');
-    }
-    updateThemeAssets();
-  };
-
-  // Función para mover el slider y cambiar el tema
-  const moveSlider = (position) => {
-    if (sliderPoint) {
-      sliderPoint.style.left = `${calculatePositionInRem(position)}rem`;
-    }
-    if (position === sunPosition) {
-      body.classList.remove('dark-mode');
-      body.classList.add('light-mode');
-      saveTheme('light');
-    } else {
-      body.classList.remove('light-mode');
-      body.classList.add('dark-mode');
-      saveTheme('dark');
-    }
-    updateThemeAssets();
-  };
-
-  // Función para cargar el tema desde localStorage (principalmente para inicialización completa)
-  const loadSavedTheme = () => {
-    const savedMode = localStorage.getItem('theme-mode');
-    console.log('Validating saved theme mode:', savedMode);
+  // Función para cambiar tema
+  const switchTheme = (toMode) => {
+    console.log('🔄 Switching theme to:', toMode);
     
-    // El tema ya se aplicó en el IIFE, solo necesitamos asegurar que todo esté sincronizado
-    if (savedMode === 'light') {
-      // Asegurar que esté en light mode
+    if (toMode === 'light') {
       body.classList.remove('dark-mode');
       body.classList.add('light-mode');
-      console.log('Confirmed light mode from cache');
-    } else {
-      // Asegurar que esté en dark mode (por defecto)
-      body.classList.remove('light-mode');
-      body.classList.add('dark-mode');
-      // Si no hay tema guardado, guardamos dark como default
-      if (!savedMode) {
-        localStorage.setItem('theme-mode', 'dark');
+      localStorage.setItem('theme-mode', 'light');
+      
+      if (sliderPoint) {
+        sliderPoint.style.left = `${calculatePositionInRem(sunPosition)}rem`;
       }
-      console.log('Confirmed dark mode (default or from cache)');
+    } else {
+      body.classList.remove('light-mode');
+      body.classList.add('dark-mode');
+      localStorage.setItem('theme-mode', 'dark');
+      
+      if (sliderPoint) {
+        sliderPoint.style.left = `${calculatePositionInRem(moonPosition)}rem`;
+      }
     }
     
-    // Actualizar todos los assets para asegurar sincronización completa
+    // Actualizar todos los assets
     updateThemeAssets();
+    console.log('✅ Theme switched to:', toMode);
   };
 
-  // Función para guardar el tema en localStorage
-  const saveTheme = (mode) => {
-    localStorage.setItem('theme-mode', mode);
-    console.log('Theme saved to localStorage:', mode);
+  // Función para toggle del tema
+  const toggleTheme = () => {
+    const isDarkMode = body.classList.contains('dark-mode');
+    switchTheme(isDarkMode ? 'light' : 'dark');
   };
 
-  // Cargar tema guardado al inicializar
-  loadSavedTheme();
-
-  // Event listeners simplificados
+  // Event Listeners
   if (themeToggleContainer) {
     themeToggleContainer.addEventListener('click', (e) => {
-      console.log('Theme toggle clicked');
+      console.log('🖱️ Theme toggle clicked');
       e.preventDefault();
       e.stopPropagation();
-      
-      if (body.classList.contains('dark-mode')) {
-        console.log('Switching to light mode');
-        moveSlider(sunPosition);
-      } else {
-        console.log('Switching to dark mode');
-        moveSlider(moonPosition);
-      }
+      toggleTheme();
     });
+    console.log('✅ Theme toggle container listener added');
+  } else {
+    console.warn('⚠️ Theme toggle container not found');
   }
 
   if (sunIcon) {
     sunIcon.addEventListener('click', (e) => {
-      console.log('Sun icon clicked');
+      console.log('☀️ Sun icon clicked');
       e.preventDefault();
       e.stopPropagation();
-      moveSlider(sunPosition);
+      switchTheme('light');
     });
+    console.log('✅ Sun icon listener added');
   }
 
   if (moonIcon) {
     moonIcon.addEventListener('click', (e) => {
-      console.log('Moon icon clicked');
+      console.log('🌙 Moon icon clicked');
       e.preventDefault();
       e.stopPropagation();
-      moveSlider(moonPosition);
+      switchTheme('dark');
     });
+    console.log('✅ Moon icon listener added');
   }
 
-  // Inicialización: Configurar imágenes y favicon al cargar la página
-  // updateThemeAssets(); // Ya se llama en loadSavedTheme()
+  // Inicialización: cargar tema y actualizar assets
+  console.log('🚀 Initializing theme system...');
+  const currentMode = localStorage.getItem('theme-mode') || 'dark';
+  console.log('💾 Saved theme mode:', currentMode);
+  
+  // Asegurar que el tema esté aplicado correctamente
+  switchTheme(currentMode);
+  
+  // Aplicar assets después de un pequeño delay para asegurar que el DOM esté completamente listo
+  setTimeout(() => {
+    updateThemeAssets();
+    console.log('✅ Theme system fully initialized');
+  }, 100);
 
-  console.log('Theme script initialized successfully');
+  console.log('🎨 Theme system setup complete');
 });

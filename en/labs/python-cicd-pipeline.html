@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python CI/CD Pipeline - José Navarro Pavón</title>
+    <link id="favicon" rel="icon" href="../../media/logo-url-dark.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/styles-generic.css">
+    <link rel="stylesheet" href="../../css/styles-labs.css">
+    <link rel="stylesheet" href="../../css/styles-lab-detail.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark-mode">
+    <header id="header">
+        <a href="../index.html" class="logo-link">
+            <img src="../../media/logo-url-dark.png" class="logo">
+        </a>
+        <div class="header-buttons"> 
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../laboratories.html">Laboratories</a></li>
+                    <li><a href="../collaborations.html">Collaborations</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-toggle-container">
+                <span class="language-option active" data-lang="en">EN</span>
+                <span class="language-separator">|</span>
+                <span class="language-option" data-lang="es">ES</span>
+            </div>
+            <div class="theme-toggle-container">
+                <i class="fas fa-sun sun-icon"></i>
+                <div class="moving-bar" id="toggle-bar">
+                  <div class="slider-point"></div>
+                </div>
+                <i class="fas fa-moon moon-icon"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="../laboratories.html">Laboratories</a> 
+        <span class="breadcrumb-separator">></span>
+        <span class="breadcrumb-current">Python CI/CD Pipeline</span>
+    </div>
+    
+    <div style="height: 2rem;"></div>
+    
+    <!-- Lab Header -->
+    <div class="lab-header">
+        <div class="lab-header-content">
+            <div class="lab-header-info">
+                <h1 class="lab-main-title">Deploying a Python App with CI/CD</h1>
+                <p class="lab-main-description">
+                    Complete CI/CD pipeline using GitHub Actions to build and push Docker images to DockerHub, 
+                    followed by manual deployment verification on both Docker containers and Kubernetes clusters.
+                </p>
+                <div class="lab-main-tech-tags">
+                    <span class="tag-python">Python</span>
+                    <span class="tag-docker">Docker</span>
+                    <span class="tag-kubernetes">Kubernetes</span>
+                    <span class="tag-github-actions">GitHub Actions</span>
+                </div>
+                <div class="lab-links">
+                    <a href="https://github.com/LiReXz/my-python-web-app" target="_blank" class="lab-link github-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="lab-header-media">
+                <img src="../../media/my-python-app.gif" alt="Python CI/CD Demo" class="lab-header-gif">
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 4rem;"></div>
+    
+    <!-- Video Demo Section -->
+    <div class="lab-section">
+        <h2 class="section-title">📹 Live Demo</h2>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/zv1weGxg_-U" 
+                title="POC Video: Deploying a Python App with CI/CD"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p class="video-description">
+            Watch the complete Proof of Concept demonstrating the entire CI/CD pipeline from code commit to deployment.
+        </p>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Overview Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🔍 Project Overview</h2>
+        <div class="content-grid">
+            <div class="content-card">
+                <h3>Tech Stack</h3>
+                <ul>
+                    <li><strong>Python (Flask)</strong> - Web framework for creating the app</li>
+                    <li><strong>Docker</strong> - Containerizes the application</li>
+                    <li><strong>GitHub Actions</strong> - Automates CI/CD pipeline to registry</li>
+                    <li><strong>Docker Hub</strong> - Stores Docker images with version history</li>
+                    <li><strong>Docker & Kubernetes</strong> - Manual deployment verification on both platforms</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <h3>Version Management</h3>
+                <ul>
+                    <li><strong>Version File:</strong> Centralized version control via <code>version</code> file</li>
+                    <li><strong>Develop Branch:</strong> version-SNAPSHOT-TIMESTAMP format</li>
+                    <li><strong>Master Branch:</strong> Clean version tags (closed versions)</li>
+                    <li><strong>Latest Tag:</strong> Always points to newest master release</li>
+                    <li><strong>Complete History:</strong> All versions maintained for rollbacks</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Architecture Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🏗️ CI/CD Architecture</h2>
+        <div class="architecture-flow">
+            <div class="flow-step">
+                <div class="flow-icon">📝</div>
+                <h4>1. Code Commit</h4>
+                <p>Push changes to GitHub repository</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon">⚙️</div>
+                <h4>2. CI/CD Pipeline</h4>
+                <p>Automated testing, build & push to registry</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon">🐳</div>
+                <h4>3. DockerHub Registry</h4>
+                <p>Auto-tagged images (latest + SHA)</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon">🔍</div>
+                <h4>4. Manual Verification</h4>
+                <p>Manual deployment testing on Docker & K8s</p>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Setup Guide Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🚀 Setup Guide</h2>
+        
+        <div class="setup-section">
+            <h3>Prerequisites</h3>
+            <div class="checklist">
+                <div class="checklist-item">✅ Git installed and configured</div>
+                <div class="checklist-item">✅ Docker installed and configured</div>
+                <div class="checklist-item">✅ DockerHub account created</div>
+                <div class="checklist-item">✅ Kubernetes/Minikube (optional for K8s deployment)</div>
+            </div>
+        </div>
+        
+        <div class="setup-section">
+            <h3>1. Clone Repository</h3>
+            <div class="code-block">
+                <pre><code>git clone https://github.com/LiReXz/my-python-web-app.git
+cd my-python-web-app</code></pre>
+            </div>
+        </div>
+        
+        <div class="setup-section">
+            <h3>2. Configure GitHub Secrets</h3>
+            <p>Go to your GitHub repository's <strong>Settings</strong> > <strong>Secrets and variables</strong> > <strong>Actions</strong> and add:</p>
+            <div class="secrets-list">
+                <div class="secret-item">
+                    <code>DOCKER_USERNAME</code> - Your Docker Hub username
+                </div>
+                <div class="secret-item">
+                    <code>DOCKER_PASSWORD</code> - Your Docker Hub password
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Version Management Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🏷️ Version Management & Automation</h2>
+        
+        <div class="content-grid">
+            <div class="content-card">
+                <h3>Version File System</h3>
+                <ul>
+                    <li><strong>Version File:</strong> Single source of truth for versioning</li>
+                    <li><strong>Develop Deploys:</strong> <code>version-SNAPSHOT-timestamp</code></li>
+                    <li><strong>Master Deploys:</strong> Clean version number only</li>
+                    <li><strong>Latest Tag:</strong> Always points to newest master version</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <h3>Version Examples</h3>
+                <div class="code-block">
+                    <pre><code># From develop branch
+lirexz/my-python-app:1.2.3-SNAPSHOT-20240915142030
+
+# From master branch  
+lirexz/my-python-app:1.2.3
+lirexz/my-python-app:latest
+
+# Version file content
+1.2.3</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="automation-note">
+            <h4>🤖 Automation Scope</h4>
+            <p><strong>Automated:</strong> Code testing, Docker building, image tagging, and push to DockerHub registry.</p>
+            <p><strong>Manual:</strong> Deployment verification on Docker containers and Kubernetes clusters for safety and validation.</p>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Deployment Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🚢 Deployment Options</h2>
+        
+        <div class="deployment-tabs">
+            <button class="tab-button active" onclick="showTab('docker-tab')">Docker Deployment</button>
+            <button class="tab-button" onclick="showTab('kubernetes-tab')">Kubernetes Deployment</button>
+        </div>
+        
+        <div id="docker-tab" class="tab-content active">
+            <h3>Docker Container Deployment</h3>
+            <div class="deployment-steps">
+                <div class="step">
+                    <h4>1. Pull the Docker Image</h4>
+                    <div class="code-block">
+                        <pre><code>docker pull myusername/my-python-web-app:latest</code></pre>
+                    </div>
+                </div>
+                <div class="step">
+                    <h4>2. Run the Container</h4>
+                    <div class="code-block">
+                        <pre><code>docker run -d -p 5000:5000 myusername/my-python-web-app:latest</code></pre>
+                    </div>
+                </div>
+                <div class="step">
+                    <h4>3. Access Application</h4>
+                    <p>Open your browser and go to <code>http://localhost:5000</code></p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="kubernetes-tab" class="tab-content">
+            <h3>Kubernetes Deployment</h3>
+            <div class="deployment-steps">
+                <div class="step">
+                    <h4>1. Deployment YAML</h4>
+                    <div class="code-block">
+                        <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-web-app
+  template:
+    metadata:
+      labels:
+        app: python-web-app
+    spec:
+      containers:
+        - name: python-web-app
+          image: myusername/my-python-web-app:latest
+          ports:
+            - containerPort: 5000</code></pre>
+                    </div>
+                </div>
+                <div class="step">
+                    <h4>2. Apply Deployment</h4>
+                    <div class="code-block">
+                        <pre><code>kubectl apply -f deployment.yaml
+kubectl get pods</code></pre>
+                    </div>
+                </div>
+                <div class="step">
+                    <h4>3. Expose Service</h4>
+                    <div class="code-block">
+                        <pre><code>kubectl expose deployment python-web-app --type=NodePort --name=python-web-app-service</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- CI/CD Pipeline Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🔄 Automated CI/CD Pipeline</h2>
+        <div class="pipeline-info">
+            <div class="pipeline-feature">
+                <h4>🌿 Version File Strategy</h4>
+                <ul>
+                    <li><strong>Version File:</strong> Contains base version number (e.g., <code>1.2.3</code>)</li>
+                    <li><strong>Develop Branch:</strong> <code>version-SNAPSHOT-timestamp</code> format</li>
+                    <li><strong>Master Branch:</strong> Clean version number only (closed version)</li>
+                    <li><strong>Latest Tag:</strong> Always points to latest master release</li>
+                </ul>
+            </div>
+            <div class="pipeline-feature">
+                <h4>🔄 Automatic Updates</h4>
+                <p>Every push triggers automatic build and deployment. Simply restart your containers:</p>
+                <div class="update-commands">
+                    <div class="update-option">
+                        <strong>Docker:</strong>
+                        <code>docker stop my-python-app && docker rm my-python-app<br>
+                        docker pull myusername/my-python-web-app:latest<br>
+                        docker run -d --name my-python-app -p 5000:5000 myusername/my-python-web-app:latest</code>
+                    </div>
+                    <div class="update-option">
+                        <strong>Kubernetes:</strong>
+                        <code>kubectl rollout restart deployment python-web-app</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 4rem;"></div>
+    
+    <!-- Back Navigation -->
+    <div class="back-navigation">
+        <a href="../laboratories.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Laboratories
+        </a>
+    </div>
+    
+    <div style="height: 6rem;"></div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2024 José Navarro Pavón. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/lirexz" target="_blank" class="github-link">GitHub</a>
+                <a href="../contact.html" class="email-link">Email</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../../scripts/scroll.js"></script>
+    <script src="../../scripts/theme.js"></script>
+    <script src="../../scripts/language-toggle.js"></script>
+    <script src="../../scripts/lab-detail.js"></script>
+</body>
+</html>

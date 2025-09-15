@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline CI/CD Python - José Navarro Pavón</title>
+    <link id="favicon" rel="icon" href="../../media/logo-url-dark.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/styles-generic.css">
+    <link rel="stylesheet" href="../../css/styles-lab-detail.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark-mode">
+    <header id="header">
+        <a href="../index.html" class="logo-link">
+            <img src="../../media/logo-url-dark.png" class="logo">
+        </a>
+        <div class="header-buttons"> 
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li class="active"><a href="../laboratories.html">Laboratorios</a></li>
+                    <li><a href="../collaborations.html">Colaboraciones</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="language-toggle-container">
+                <span class="language-option" data-lang="en">EN</span>
+                <span class="language-separator">|</span>
+                <span class="language-option active" data-lang="es">ES</span>
+            </div>
+            <div class="theme-toggle-container">
+                <i class="fas fa-sun sun-icon"></i>
+                <div class="moving-bar" id="toggle-bar">
+                    <div class="slider-point"></div>
+                </div>
+                <i class="fas fa-moon moon-icon"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb">
+        <a href="../laboratories.html">Laboratorios</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Pipeline CI/CD Python</span>
+    </nav>
+    
+    <!-- Lab Header -->
+    <div class="lab-header">
+        <h1 class="lab-main-title">Despliegue de App Python con CI/CD</h1>
+        <p class="lab-subtitle">Pipeline completo automatizado desde código hasta producción</p>
+        <div class="lab-tech-showcase">
+            <span class="tech-badge tech-python">Python</span>
+            <span class="tech-badge tech-docker">Docker</span>
+            <span class="tech-badge tech-github-actions">GitHub Actions</span>
+            <span class="tech-badge tech-kubernetes">Kubernetes</span>
+        </div>
+    </div>
+
+    <!-- Video Demo Section -->
+    <div class="video-demo-section">
+        <h2 class="section-title">
+            <i class="fas fa-play-circle"></i>
+            Demostración del Proyecto
+        </h2>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/I4QZx6FWJMs" 
+                title="Demostración del Pipeline CI/CD Python"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Project Overview -->
+    <div class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-info-circle"></i>
+            Resumen del Proyecto
+        </h2>
+        <div class="overview-grid">
+            <div class="overview-card">
+                <h3>🎯 Objetivo</h3>
+                <p>Desarrollar una aplicación web Flask con un pipeline CI/CD completo que automatice la construcción, testing, empaquetado con Docker y despliegue en múltiples entornos.</p>
+            </div>
+            <div class="overview-card">
+                <h3>🏗️ Arquitectura</h3>
+                <p>Aplicación Flask containerizada, GitHub Actions para CI/CD, DockerHub como registro, y despliegues en Docker local y Kubernetes.</p>
+            </div>
+            <div class="overview-card">
+                <h3>📋 Características</h3>
+                <ul>
+                    <li>API REST con Flask</li>
+                    <li>Testing y construcción automatizada</li>
+                    <li>Containerización Docker</li>
+                    <li>Pipeline CI/CD automatizado a registro</li>
+                    <li>Gestión automática de versiones</li>
+                    <li>Verificación manual de despliegue en Docker y Kubernetes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Architecture Flow -->
+    <div class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-project-diagram"></i>
+            Flujo de Arquitectura
+        </h2>
+        <div class="architecture-flow">
+            <div class="flow-step">
+                <div class="step-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h4>1. Desarrollo</h4>
+                <p>Código Python/Flask<br>con estructura modular</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="step-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h4>2. CI Pipeline</h4>
+                <p>GitHub Actions ejecuta<br>testing y construcción</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="step-icon">
+                    <i class="fas fa-docker"></i>
+                </div>
+                <h4>3. Containerización</h4>
+                <p>Docker build y push<br>a DockerHub registry</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="step-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h4>4. Verificación Manual</h4>
+                <p>Testing manual en Docker<br>y Kubernetes</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Getting Started -->
+    <div class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-rocket"></i>
+            Guía de Instalación
+        </h2>
+        <div class="setup-guide">
+            <div class="setup-step">
+                <h3>📥 1. Clonar Repositorio</h3>
+                <div class="code-block">
+                    <pre><code>git clone https://github.com/lirexz/my-python-web-app.git
+cd my-python-web-app</code></pre>
+                </div>
+            </div>
+
+            <div class="setup-step">
+                <h3>🐍 2. Configurar Entorno Python</h3>
+                <div class="code-block">
+                    <pre><code># Crear entorno virtual
+python -m venv venv
+
+# Activar entorno virtual (Windows)
+venv\Scripts\activate
+
+# Activar entorno virtual (Linux/Mac)
+source venv/bin/activate
+
+# Instalar dependencias
+pip install -r requirements.txt</code></pre>
+                </div>
+            </div>
+
+            <div class="setup-step">
+                <h3>🧪 3. Ejecutar Tests</h3>
+                <div class="code-block">
+                    <pre><code># Ejecutar suite completa de tests
+python -m pytest tests/ -v
+
+# Ejecutar con coverage
+python -m pytest tests/ --cov=app --cov-report=html</code></pre>
+                </div>
+            </div>
+
+            <div class="setup-step">
+                <h3>🚀 4. Ejecutar Aplicación Local</h3>
+                <div class="code-block">
+                    <pre><code># Modo desarrollo
+python app.py
+
+# La aplicación estará disponible en:
+# http://localhost:5000</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Version Management Section -->
+    <div class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-tags"></i>
+            Gestión de Versiones y Automatización
+        </h2>
+        
+        <div class="overview-grid">
+            <div class="overview-card">
+                <h3>📊 Sistema de Versionado</h3>
+                <ul>
+                    <li><strong>Archivo Version:</strong> Fuente central de control de versión</li>
+                    <li><strong>Rama Develop:</strong> formato version-SNAPSHOT-TIMESTAMP</li>
+                    <li><strong>Rama Master:</strong> Solo número de versión limpio (versión cerrada)</li>
+                    <li><strong>Tag Latest:</strong> Siempre apunta a la última release de master</li>
+                    <li><strong>Historial Completo:</strong> Todas las versiones mantenidas para rollbacks</li>
+                </ul>
+            </div>
+            <div class="overview-card">
+                <h3>� Ejemplos de Versiones</h3>
+                <div class="code-block">
+                    <pre><code># Desde rama develop
+lirexz/my-python-app:1.2.3-SNAPSHOT-20240915142030
+
+# Desde rama master  
+lirexz/my-python-app:1.2.3
+lirexz/my-python-app:latest
+
+# Contenido del archivo version
+1.2.3</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="overview-card">
+            <h3>🤖 Sistema de Archivo Version</h3>
+            <p><strong>Archivo Version:</strong> Contiene número base de versión (ej: <code>1.2.3</code>)</p>
+            <p><strong>Rama Develop:</strong> Genera tags formato <code>version-SNAPSHOT-timestamp</code></p>
+            <p><strong>Rama Master:</strong> Usa solo el número de versión limpio (versión cerrada)</p>
+            <p><strong>Automatizado:</strong> Testing, construcción Docker, etiquetado y push a DockerHub</p>
+            <p><strong>Manual:</strong> Verificación de despliegue en contenedores Docker y clusters Kubernetes para seguridad</p>
+        </div>
+    </div>
+
+    <!-- Deployment Options -->
+    <div class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-cloud"></i>
+            Opciones de Despliegue
+        </h2>
+        
+        <div class="deployment-tabs">
+            <button class="tab-button active" onclick="showTab('docker')">
+                <i class="fab fa-docker"></i> Docker
+            </button>
+            <button class="tab-button" onclick="showTab('kubernetes')">
+                <i class="fas fa-dharmachakra"></i> Kubernetes
+            </button>
+        </div>
+
+        <div id="docker" class="tab-content active">
+            <div class="deployment-option">
+                <h3>🐳 Despliegue con Docker</h3>
+                <p>Despliegue rápido usando contenedores Docker para desarrollo y testing.</p>
+                
+                <div class="deployment-steps">
+                    <h4>Pasos para Docker:</h4>
+                    <div class="code-block">
+                        <pre><code># 1. Construir imagen Docker
+docker build -t my-python-app .
+
+# 2. Ejecutar contenedor
+docker run -d -p 5000:5000 --name python-app my-python-app
+
+# 3. Verificar estado
+docker ps
+
+# 4. Acceder a la aplicación
+# http://localhost:5000</code></pre>
+                    </div>
+                </div>
+
+                <div class="benefits">
+                    <h4>✅ Ventajas de Docker:</h4>
+                    <ul>
+                        <li>Configuración rápida y consistente</li>
+                        <li>Aislamiento de dependencias</li>
+                        <li>Portabilidad entre entornos</li>
+                        <li>Ideal para desarrollo local</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="kubernetes" class="tab-content">
+            <div class="deployment-option">
+                <h3>☸️ Despliegue en Kubernetes</h3>
+                <p>Orquestación empresarial con alta disponibilidad, escalado automático y gestión avanzada.</p>
+                
+                <div class="deployment-steps">
+                    <h4>Pasos para Kubernetes:</h4>
+                    <div class="code-block">
+                        <pre><code># 1. Aplicar configuraciones
+kubectl apply -f k8s/
+
+# 2. Verificar despliegue
+kubectl get pods -l app=python-app
+
+# 3. Verificar servicio
+kubectl get service python-app-service
+
+# 4. Acceder (si usando NodePort)
+kubectl get nodes -o wide</code></pre>
+                    </div>
+                </div>
+
+                <div class="k8s-resources">
+                    <h4>📦 Recursos Kubernetes Incluidos:</h4>
+                    <ul>
+                        <li><strong>Deployment:</strong> Gestión de pods y réplicas</li>
+                        <li><strong>Service:</strong> Balanceador de carga interno</li>
+                        <li><strong>ConfigMap:</strong> Configuración de aplicación</li>
+                        <li><strong>HPA:</strong> Auto-escalado horizontal</li>
+                    </ul>
+                </div>
+
+                <div class="benefits">
+                    <h4>✅ Ventajas de Kubernetes:</h4>
+                    <ul>
+                        <li>Alta disponibilidad y resilencia</li>
+                        <li>Escalado automático basado en métricas</li>
+                        <li>Rolling updates sin downtime</li>
+                        <li>Gestión avanzada de configuración</li>
+                        <li>Monitoreo y observabilidad integrados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CI/CD Pipeline Details -->
+    <div class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-infinity"></i>
+            Pipeline CI/CD
+        </h2>
+        <div class="pipeline-details">
+            <div class="pipeline-stage">
+                <h3>🔄 Trigger del Pipeline</h3>
+                <p>El pipeline se ejecuta automáticamente en:</p>
+                <ul>
+                    <li>Push a rama <code>main</code></li>
+                    <li>Pull requests a <code>main</code></li>
+                    <li>Ejecución manual desde GitHub Actions</li>
+                </ul>
+            </div>
+
+            <div class="pipeline-stage">
+                <h3>🧪 Etapa de Testing</h3>
+                <div class="code-block">
+                    <pre><code># Tests unitarios y de integración
+pytest tests/ -v --cov=app
+
+# Linting y formato de código
+flake8 app/ tests/
+black --check app/ tests/</code></pre>
+                </div>
+            </div>
+
+            <div class="pipeline-stage">
+                <h3>🏗️ Construcción de Imagen</h3>
+                <div class="code-block">
+                    <pre><code># Build multi-stage Docker image
+docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app:latest .
+
+# Tagging con versión
+docker tag my-python-app:latest my-python-app:${{ github.sha }}</code></pre>
+                </div>
+            </div>
+
+            <div class="pipeline-stage">
+                <h3>📦 Publicación</h3>
+                <div class="code-block">
+                    <pre><code># Push a DockerHub
+docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app:latest
+docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app:${{ github.sha }}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Structure -->
+    <div class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-folder-tree"></i>
+            Estructura del Proyecto
+        </h2>
+        <div class="code-block">
+            <pre><code>my-python-web-app/
+├── app/
+│   ├── __init__.py
+│   ├── main.py              # Aplicación Flask principal
+│   ├── routes.py            # Definición de rutas API
+│   └── utils.py             # Funciones utilitarias
+├── tests/
+│   ├── __init__.py
+│   ├── test_app.py          # Tests unitarios
+│   └── test_integration.py  # Tests de integración
+├── k8s/
+│   ├── deployment.yaml      # Configuración Kubernetes
+│   ├── service.yaml         # Servicio de red
+│   └── configmap.yaml       # Variables de configuración
+├── .github/workflows/
+│   └── ci-cd.yml           # Pipeline GitHub Actions
+├── Dockerfile              # Imagen Docker multi-stage
+├── requirements.txt        # Dependencias Python
+├── docker-compose.yml      # Orquestación local
+└── README.md              # Documentación</code></pre>
+        </div>
+    </div>
+
+    <!-- Links and Resources -->
+    <div class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-link"></i>
+            Enlaces y Recursos
+        </h2>
+        <div class="resources-grid">
+            <a href="https://github.com/lirexz/my-python-web-app" target="_blank" class="resource-card">
+                <i class="fab fa-github"></i>
+                <h4>Repositorio GitHub</h4>
+                <p>Código fuente completo y documentación</p>
+            </a>
+            <a href="https://hub.docker.com/r/lirexz/my-python-web-app" target="_blank" class="resource-card">
+                <i class="fab fa-docker"></i>
+                <h4>DockerHub Registry</h4>
+                <p>Imágenes Docker listas para usar</p>
+            </a>
+            <a href="https://www.youtube.com/watch?v=I4QZx6FWJMs" target="_blank" class="resource-card">
+                <i class="fab fa-youtube"></i>
+                <h4>Video Demostración</h4>
+                <p>Tutorial completo del proyecto</p>
+            </a>
+        </div>
+    </div>
+
+    <div style="height: 6rem;"></div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2024 José Navarro Pavón. Todos los Derechos Reservados.</p>
+            <div class="footer-links">
+                <a href="https://github.com/lirexz" target="_blank" class="github-link">GitHub</a>
+                <a href="../contact.html" class="email-link">Correo</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../scripts/scroll.js"></script>
+    <script src="../../scripts/theme.js"></script>
+    <script src="../../scripts/language-toggle.js"></script>
+    <script src="../../scripts/lab-detail.js"></script>
+</body>
+</html>

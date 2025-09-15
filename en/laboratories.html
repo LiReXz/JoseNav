@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>José Navarro Pavón - DevOps</title>
-    <link id="favicon" rel="icon" href="media/logo-url-dark.png" type="image/x-icon">
+    <link id="favicon" rel="icon" href="../media/logo-url-dark.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/styles-generic.css">
     <link rel="stylesheet" href="../css/styles-labs.css">
     <link rel="stylesheet" href="../css/fonts.css">
@@ -43,7 +43,6 @@
             </div>
         </div>
     </header>
-    <div style="height: 6.25rem;"></div>
     
     <div class="introduction-container">
         <div class="section">Laboratories
@@ -64,12 +63,13 @@
         <div class="filter-title">Filter by Technology:</div>
         <div class="filter-tags">
             <span class="filter-tag active" data-tech="all">All</span>
-            <span class="filter-tag" data-tech="kubernetes">Kubernetes</span>
+            <span class="filter-tag" data-tech="aws">AWS</span>
             <span class="filter-tag" data-tech="docker">Docker</span>
+            <span class="filter-tag" data-tech="github-actions">GitHub Actions</span>
+            <span class="filter-tag" data-tech="jenkins">Jenkins</span>
+            <span class="filter-tag" data-tech="kubernetes">Kubernetes</span>
             <span class="filter-tag" data-tech="python">Python</span>
             <span class="filter-tag" data-tech="terraform">Terraform</span>
-            <span class="filter-tag" data-tech="aws">AWS</span>
-            <span class="filter-tag" data-tech="jenkins">Jenkins</span>
         </div>
     </div>
     
@@ -79,28 +79,36 @@
     <div class="labs-grid">
         
         <!-- Laboratory 1 -->
-        <div class="lab-item" data-tech="kubernetes docker python">
-            <div class="lab-gif">
-                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=K8s+Python+Demo" alt="Lab Demo" class="lab-gif-image">
-            </div>
-            <div class="lab-content">
-                <h3 class="lab-title">Deploying Python App in K8s</h3>
-                <p class="lab-description">
-                    Complete guide to containerizing a Python application and deploying it to Kubernetes 
-                    with ConfigMaps, Secrets, and persistent storage.
-                </p>
-                <div class="lab-tech-tags">
-                    <span class="tag-kubernetes">Kubernetes</span>
-                    <span class="tag-docker">Docker</span>
-                    <span class="tag-python">Python</span>
+        <div class="lab-item" data-tech="python docker kubernetes github-actions">
+            <a href="./labs/python-cicd-pipeline.html" class="lab-link-wrapper">
+                <div class="lab-gif">
+                    <div class="lab-preview-container">
+                        <img src="../media/my-python-app-static.png" alt="Python App Demo" class="lab-static-image">
+                        <img src="../media/my-python-app.gif" alt="Python App Demo" class="lab-gif-image">
+                    </div>
                 </div>
-            </div>
+                <div class="lab-content">
+                    <h3 class="lab-title">Deploying a Python App with CI/CD</h3>
+                    <p class="lab-description">
+                        Complete CI/CD pipeline using GitHub Actions to build and push Docker images to DockerHub 
+                        with automated versioning (version file + SNAPSHOT/timestamp). Manual deployment verification on both Docker containers and Kubernetes clusters 
+                        with maintained version history for rollbacks.
+                    </p>
+                    <div class="lab-tech-tags">
+                        <span class="tag-docker">Docker</span>
+                        <span class="tag-github-actions">GitHub Actions</span>
+                        <span class="tag-kubernetes">Kubernetes</span>
+                        <span class="tag-python">Python</span>
+                    </div>
+                </div>
+            </a>
         </div>
 
         <!-- Laboratory 2 -->
         <div class="lab-item" data-tech="terraform aws">
             <div class="lab-gif">
-                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=Terraform+AWS" alt="Lab Demo" class="lab-gif-image">
+                <img src="https://via.placeholder.com/400x300/2f3643/ffffff?text=Terraform+AWS" alt="Terraform AWS" class="lab-static-image">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=Terraform+AWS" alt="Terraform AWS" class="lab-gif-image">
             </div>
             <div class="lab-content">
                 <h3 class="lab-title">Infrastructure as Code with Terraform</h3>
@@ -109,8 +117,8 @@
                     and RDS with automated deployment pipelines.
                 </p>
                 <div class="lab-tech-tags">
-                    <span class="tag-terraform">Terraform</span>
                     <span class="tag-aws">AWS</span>
+                    <span class="tag-terraform">Terraform</span>
                 </div>
             </div>
         </div>
@@ -118,7 +126,8 @@
         <!-- Laboratory 3 -->
         <div class="lab-item" data-tech="jenkins docker kubernetes">
             <div class="lab-gif">
-                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=CI%2FCD+Pipeline" alt="Lab Demo" class="lab-gif-image">
+                <img src="https://via.placeholder.com/400x300/2f3643/ffffff?text=CI%2FCD+Pipeline" alt="CI/CD Pipeline" class="lab-static-image">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=CI%2FCD+Pipeline" alt="CI/CD Pipeline" class="lab-gif-image">
             </div>
             <div class="lab-content">
                 <h3 class="lab-title">CI/CD Pipeline with Jenkins</h3>
@@ -127,8 +136,8 @@
                     with automated testing, building, and deployment stages.
                 </p>
                 <div class="lab-tech-tags">
-                    <span class="tag-jenkins">Jenkins</span>
                     <span class="tag-docker">Docker</span>
+                    <span class="tag-jenkins">Jenkins</span>
                     <span class="tag-kubernetes">Kubernetes</span>
                 </div>
             </div>
@@ -137,7 +146,8 @@
         <!-- Laboratory 4 -->
         <div class="lab-item" data-tech="docker python">
             <div class="lab-gif">
-                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=Docker+Compose" alt="Lab Demo" class="lab-gif-image">
+                <img src="https://via.placeholder.com/400x300/2f3643/ffffff?text=Docker+Compose" alt="Docker Compose" class="lab-static-image">
+                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=Docker+Compose" alt="Docker Compose" class="lab-gif-image">
             </div>
             <div class="lab-content">
                 <h3 class="lab-title">Multi-Service App with Docker Compose</h3>
@@ -169,4 +179,5 @@
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/language-toggle.js"></script>
     <script src="../scripts/technology-filter.js"></script>
+    <script src="../scripts/lab-image-control.js"></script>
 </body>
