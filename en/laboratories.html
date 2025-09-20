@@ -44,6 +44,8 @@
         </div>
     </header>
     
+    <div style="height: 6.25rem;"></div>
+    
     <div class="introduction-container">
         <div class="section">Laboratories
             <div style="height: 1.25rem;"></div>
@@ -53,11 +55,6 @@
     
     <div style="height: 4rem;"></div>
     
-    <!-- Dummy content indicator -->
-    <div class="dummy-content-indicator">
-        * Sample content - Under development
-    </div>
-    
     <!-- Technology Filter -->
     <div class="technology-filter">
         <div class="filter-title">Filter by Technology:</div>
@@ -66,7 +63,6 @@
             <span class="filter-tag" data-tech="aws">AWS</span>
             <span class="filter-tag" data-tech="docker">Docker</span>
             <span class="filter-tag" data-tech="github-actions">GitHub Actions</span>
-            <span class="filter-tag" data-tech="jenkins">Jenkins</span>
             <span class="filter-tag" data-tech="kubernetes">Kubernetes</span>
             <span class="filter-tag" data-tech="python">Python</span>
             <span class="filter-tag" data-tech="terraform">Terraform</span>
@@ -80,7 +76,7 @@
         
         <!-- Laboratory 1 -->
         <div class="lab-item" data-tech="python docker kubernetes github-actions">
-            <a href="./labs/python-cicd-pipeline.html" class="lab-link-wrapper">
+            <a href="./labs/deploying-python-app-cicd.html" class="lab-link-wrapper">
                 <div class="lab-gif">
                     <div class="lab-preview-container">
                         <img src="../media/my-python-app-static.png" alt="Python App Demo" class="lab-static-image">
@@ -106,60 +102,26 @@
 
         <!-- Laboratory 2 -->
         <div class="lab-item" data-tech="terraform aws">
-            <div class="lab-gif">
-                <img src="https://via.placeholder.com/400x300/2f3643/ffffff?text=Terraform+AWS" alt="Terraform AWS" class="lab-static-image">
-                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=Terraform+AWS" alt="Terraform AWS" class="lab-gif-image">
-            </div>
-            <div class="lab-content">
-                <h3 class="lab-title">Infrastructure as Code with Terraform</h3>
-                <p class="lab-description">
-                    Build scalable AWS infrastructure using Terraform modules, including VPC, EKS, 
-                    and RDS with automated deployment pipelines.
-                </p>
-                <div class="lab-tech-tags">
-                    <span class="tag-aws">AWS</span>
-                    <span class="tag-terraform">Terraform</span>
+            <a href="./labs/working-with-terraform-modules.html" class="lab-link-wrapper">
+                <div class="lab-gif">
+                    <div class="lab-preview-container">
+                        <div class="collaboration-preview-icon">
+                            <i class="fas fa-cubes" style="font-size: 4rem; color: #7B42BC;"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Laboratory 3 -->
-        <div class="lab-item" data-tech="jenkins docker kubernetes">
-            <div class="lab-gif">
-                <img src="https://via.placeholder.com/400x300/2f3643/ffffff?text=CI%2FCD+Pipeline" alt="CI/CD Pipeline" class="lab-static-image">
-                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=CI%2FCD+Pipeline" alt="CI/CD Pipeline" class="lab-gif-image">
-            </div>
-            <div class="lab-content">
-                <h3 class="lab-title">CI/CD Pipeline with Jenkins</h3>
-                <p class="lab-description">
-                    Set up automated CI/CD pipeline using Jenkins, Docker, and Kubernetes 
-                    with automated testing, building, and deployment stages.
-                </p>
-                <div class="lab-tech-tags">
-                    <span class="tag-docker">Docker</span>
-                    <span class="tag-jenkins">Jenkins</span>
-                    <span class="tag-kubernetes">Kubernetes</span>
+                <div class="lab-content">
+                    <h3 class="lab-title">Working with Terraform Modules</h3>
+                    <p class="lab-description">
+                        Learn the basics of organizing Terraform code using modules. Simple guide covering how to structure 
+                        your projects with network, compute, and IAM modules for better code organization and reusability.
+                    </p>
+                    <div class="lab-tech-tags">
+                        <span class="tag-terraform">Terraform</span>
+                        <span class="tag-aws">AWS</span>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Laboratory 4 -->
-        <div class="lab-item" data-tech="docker python">
-            <div class="lab-gif">
-                <img src="https://via.placeholder.com/400x300/2f3643/ffffff?text=Docker+Compose" alt="Docker Compose" class="lab-static-image">
-                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=Docker+Compose" alt="Docker Compose" class="lab-gif-image">
-            </div>
-            <div class="lab-content">
-                <h3 class="lab-title">Multi-Service App with Docker Compose</h3>
-                <p class="lab-description">
-                    Build a multi-container application using Docker Compose with Python backend, 
-                    Redis cache, PostgreSQL database, and Nginx reverse proxy.
-                </p>
-                <div class="lab-tech-tags">
-                    <span class="tag-docker">Docker</span>
-                    <span class="tag-python">Python</span>
-                </div>
-            </div>
+            </a>
         </div>
 
     </div>
@@ -180,4 +142,5 @@
     <script src="../scripts/language-toggle.js"></script>
     <script src="../scripts/technology-filter.js"></script>
     <script src="../scripts/lab-image-control.js"></script>
+    <script src="../scripts/tag-sorter.js"></script>
 </body>

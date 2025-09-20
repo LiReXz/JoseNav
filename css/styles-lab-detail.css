@@ -125,6 +125,46 @@ body.scrolled .breadcrumb {
   transform: translateY(-2px);
 }
 
+.demo-link {
+  background: linear-gradient(135deg, #7fff00 0%, #32cd32 100%);
+  color: #000;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+  box-shadow: 0 4px 12px rgba(127, 255, 0, 0.2);
+}
+
+.demo-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(127, 255, 0, 0.4);
+}
+
+.demo-link i {
+  font-size: 0.9rem;
+  margin-right: 0.6rem;
+}
+
+/* Light mode demo link */
+.light-mode .demo-link {
+  background: linear-gradient(135deg, #7fff00 0%, #32cd32 100%);
+  color: #000;
+  border: 2px solid transparent;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+  box-shadow: 0 4px 12px rgba(127, 255, 0, 0.2);
+}
+
+.light-mode .demo-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(127, 255, 0, 0.4);
+}
+
 /* Version Management & Automation Styles */
 .automation-note {
   background: rgba(127, 255, 0, 0.1);
@@ -595,4 +635,165 @@ body.scrolled .breadcrumb {
   .update-commands {
     grid-template-columns: 1fr;
   }
+}
+
+/* Terraform diagram styling */
+.terraform-diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Module section styling */
+.module-section {
+  margin-bottom: 2rem;
+}
+
+.module-section h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .module-section h3 {
+  color: #7fff00;
+}
+
+.light-mode .module-section h3 {
+  color: #F4A261;
+}
+
+/* Variable step styling */
+.variable-step {
+  margin-bottom: 1.5rem;
+}
+
+.variable-step h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark-mode .variable-step h4 {
+  color: #ffffff;
+}
+
+.light-mode .variable-step h4 {
+  color: #2c3e50;
+}
+
+/* Best practices grid */
+.best-practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.practice-card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+}
+
+.dark-mode .practice-card {
+  background: rgba(139, 143, 151, 0.1);
+  border-color: rgba(139, 143, 151, 0.2);
+}
+
+.light-mode .practice-card {
+  background: rgba(244, 162, 97, 0.1);
+  border-color: rgba(244, 162, 97, 0.2);
+}
+
+.practice-card h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .practice-card h4 {
+  color: #7fff00;
+}
+
+.light-mode .practice-card h4 {
+  color: #F4A261;
+}
+
+.practice-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.practice-card li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.practice-card li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+.dark-mode .practice-card li:before {
+  color: #7fff00;
+}
+
+.light-mode .practice-card li:before {
+  color: #F4A261;
+}
+
+/* Troubleshooting section */
+.troubleshooting-section {
+  margin-top: 2rem;
+}
+
+.issue-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+}
+
+.dark-mode .issue-item {
+  background: rgba(231, 76, 60, 0.1);
+  border-color: rgba(231, 76, 60, 0.2);
+}
+
+.light-mode .issue-item {
+  background: rgba(231, 76, 60, 0.1);
+  border-color: rgba(231, 76, 60, 0.2);
+}
+
+.issue-item h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #E74C3C;
+}
+
+.issue-item p {
+  margin-bottom: 0.5rem;
+}
+
+.issue-item code {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: 'Inconsolata', monospace;
+  font-size: 0.9rem;
+}
+
+.dark-mode .issue-item code {
+  background: rgba(255, 255, 255, 0.1);
+  color: #7fff00;
+}
+
+.light-mode .issue-item code {
+  background: rgba(0, 0, 0, 0.1);
+  color: #E74C3C;
 }

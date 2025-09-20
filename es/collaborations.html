@@ -6,7 +6,7 @@
     <title>José Navarro Pavón - DevOps</title>
     <link id="favicon" rel="icon" href="../media/logo-url-dark.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/styles-generic.css">
-    <link rel="stylesheet" href="../css/styles-collaborations.css">
+    <link rel="stylesheet" href="../css/styles-labs.css">
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,70 +52,58 @@
         </div>
     </div>
     
-    <div style="height: 2rem;"></div>
+    <div style="height: 4rem;"></div>
     
-    <!-- Dummy content indicator -->
-    <div class="dummy-content-indicator">
-        * Contenido de ejemplo - En desarrollo
+    <!-- Technology Filter -->
+    <div class="technology-filter">
+        <div class="filter-title">Filtrar por Tecnología:</div>
+        <div class="filter-tags">
+            <span class="filter-tag active" data-tech="all">Todo</span>
+            <span class="filter-tag" data-tech="aws">AWS</span>
+            <span class="filter-tag" data-tech="docker">Docker</span>
+            <span class="filter-tag" data-tech="github-actions">GitHub Actions</span>
+            <span class="filter-tag" data-tech="maven">Maven</span>
+            <span class="filter-tag" data-tech="terraform">Terraform</span>
+        </div>
     </div>
     
-    <!-- Collaborations content -->
-    <div class="collaborations-content">
+    <div style="height: 3rem;"></div>
+    
+    <!-- Collaborations Grid -->
+    <div class="labs-grid">
         
         <!-- Collaboration 1 -->
-        <div class="collaboration-item">
-            <h3 class="collaboration-title">
-                Optimización de Pipelines CI/CD
-            </h3>
-            <p class="collaboration-description">
-                Colaboración en la mejora de procesos de integración continua para equipos de desarrollo, 
-                reduciendo tiempos de despliegue en un 40% mediante la implementación de estrategias de 
-                paralelización y optimización de contenedores Docker.
-            </p>
-            <div class="tech-tags">
-                <span class="tech-tag">Jenkins</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">Kubernetes</span>
-            </div>
-        </div>
-
-        <!-- Collaboration 2 -->
-        <div class="collaboration-item">
-            <h3 class="collaboration-title">
-                Migración a AWS Cloud
-            </h3>
-            <p class="collaboration-description">
-                Participación en proyecto de migración de infraestructura on-premises a AWS, 
-                diseñando arquitecturas escalables y implementando mejores prácticas de seguridad 
-                y monitoreo para aplicaciones críticas.
-            </p>
-            <div class="tech-tags">
-                <span class="tech-tag">AWS</span>
-                <span class="tech-tag">Terraform</span>
-                <span class="tech-tag">CloudWatch</span>
-            </div>
-        </div>
-
-        <!-- Collaboration 3 -->
-        <div class="collaboration-item">
-            <h3 class="collaboration-title">
-                Automatización de Despliegues
-            </h3>
-            <p class="collaboration-description">
-                Desarrollo de scripts y herramientas de automatización para despliegues multi-entorno, 
-                integrando validaciones automáticas y rollback capabilities para garantizar la 
-                estabilidad de las aplicaciones en producción.
-            </p>
-            <div class="tech-tags">
-                <span class="tech-tag">GitHub Actions</span>
-                <span class="tech-tag">Ansible</span>
-                <span class="tech-tag">Helm</span>
-            </div>
+        <div class="lab-item" data-tech="aws terraform github-actions docker maven">
+            <a href="collabs/ranky-discord-bot-collaboration.html" class="lab-link-wrapper">
+                <div class="lab-gif">
+                    <div class="lab-preview-container">
+                        <div class="collaboration-preview-icon">
+                            <i class="fas fa-robot" style="font-size: 4rem; color: #7B42BC;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="lab-content">
+                    <h3 class="lab-title">DevOps para Bot de Discord Ranky (MKGF)</h3>
+                    <p class="lab-description">
+                        Implementación DevOps para el bot de Discord de League of Legends de MKGF. Pipeline CI/CD completo con 
+                        infraestructura AWS, automatización Terraform y despliegue containerizado para plataforma de comunidad gaming.
+                    </p>
+                    <div class="lab-tech-tags">
+                        <span class="tag-aws">AWS</span>
+                        <span class="tag-docker">Docker</span>
+                        <span class="tag-github-actions">GitHub Actions</span>
+                        <span class="tag-maven">Maven</span>
+                        <span class="tag-terraform">Terraform</span>
+                    </div>
+                </div>
+            </a>
         </div>
 
     </div>
     
     <div style="height: 6rem;"></div>
+
+    <footer class="footer">
         <div class="footer-content">
           <p class="copyright">© 2024 José Navarro Pavón. Todos los Derechos Reservados.</p>
           <div class="footer-links">
@@ -127,5 +115,8 @@
     <script src="../scripts/scroll.js"></script>
     <script src="../scripts/theme.js"></script>
     <script src="../scripts/language-toggle.js"></script>
+    <script src="../scripts/technology-filter.js"></script>
+    <script src="../scripts/lab-image-control.js"></script>
+    <script src="../scripts/tag-sorter.js"></script>
 </body>
 </html>

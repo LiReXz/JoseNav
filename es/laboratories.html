@@ -44,6 +44,8 @@
         </div>
     </header>
     
+    <div style="height: 6.25rem;"></div>
+    
     <div class="introduction-container">
         <div class="section">Laboratorios
             <div style="height: 1.25rem;"></div>
@@ -61,7 +63,6 @@
             <button class="filter-tag" data-tech="aws">AWS</button>
             <button class="filter-tag" data-tech="docker">Docker</button>
             <button class="filter-tag" data-tech="github-actions">GitHub Actions</button>
-            <button class="filter-tag" data-tech="jenkins">Jenkins</button>
             <button class="filter-tag" data-tech="kubernetes">Kubernetes</button>
             <button class="filter-tag" data-tech="python">Python</button>
             <button class="filter-tag" data-tech="terraform">Terraform</button>
@@ -73,7 +74,7 @@
         
         <!-- Laboratory 1 -->
         <div class="lab-item" data-tech="python docker kubernetes github-actions">
-            <a href="./labs/python-cicd-pipeline.html" class="lab-link-wrapper">
+            <a href="./labs/deploying-python-app-cicd.html" class="lab-link-wrapper">
                 <div class="lab-gif">
                     <div class="lab-preview-container">
                         <img src="../media/my-python-app-static.png" alt="Demostración App Python" class="lab-static-image">
@@ -99,40 +100,26 @@
 
         <!-- Laboratory 2 -->
         <div class="lab-item" data-tech="terraform aws">
-            <div class="lab-gif">
-                <img src="https://via.placeholder.com/400x300/2f3643/ffffff?text=IaC+Lab" alt="Laboratorio IaC" class="lab-static-image">
-                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=IaC+Lab+Animated" alt="Laboratorio IaC" class="lab-gif-image">
-            </div>
-            <div class="lab-content">
-                <h3 class="lab-title">Laboratorio de Infraestructura como Código (IaC)</h3>
-                <p class="lab-description">
-                    Entorno experimental para probar y desarrollar soluciones de Infraestructura como Código 
-                    usando Terraform, Ansible y APIs de proveedores cloud.
-                </p>
-                <div class="lab-tech-tags">
-                    <span class="tag-aws">AWS</span>
-                    <span class="tag-terraform">Terraform</span>
+            <a href="./labs/working-with-terraform-modules.html" class="lab-link-wrapper">
+                <div class="lab-gif">
+                    <div class="lab-preview-container">
+                        <div class="collaboration-preview-icon">
+                            <i class="fas fa-cubes" style="font-size: 4rem; color: #7B42BC;"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Laboratory 3 -->
-        <div class="lab-item" data-tech="kubernetes docker">
-            <div class="lab-gif">
-                <img src="https://via.placeholder.com/400x300/2f3643/ffffff?text=K8s+Lab" alt="Laboratorio Kubernetes" class="lab-static-image">
-                <img src="https://via.placeholder.com/400x300/2f3643/7fff00?text=K8s+Lab+Animated" alt="Laboratorio Kubernetes" class="lab-gif-image">
-            </div>
-            <div class="lab-content">
-                <h3 class="lab-title">Laboratorio de Orquestación de Contenedores</h3>
-                <p class="lab-description">
-                    Campo de pruebas para configuraciones avanzadas de Kubernetes, implementaciones de service mesh 
-                    y prácticas de seguridad de contenedores.
-                </p>
-                <div class="lab-tech-tags">
-                    <span class="tag-docker">Docker</span>
-                    <span class="tag-kubernetes">Kubernetes</span>
+                <div class="lab-content">
+                    <h3 class="lab-title">Trabajando con Módulos de Terraform</h3>
+                    <p class="lab-description">
+                        Aprende lo básico de organizar código de Terraform usando módulos. Guía simple que cubre cómo estructurar 
+                        tus proyectos con módulos de red, compute e IAM para mejor organización y reutilización del código.
+                    </p>
+                    <div class="lab-tech-tags">
+                        <span class="tag-terraform">Terraform</span>
+                        <span class="tag-aws">AWS</span>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
 
     </div>
@@ -153,5 +140,6 @@
     <script src="../scripts/language-toggle.js"></script>
     <script src="../scripts/other-notable-work-layout.js"></script>
     <script src="../scripts/lab-image-control.js"></script>
+    <script src="../scripts/tag-sorter.js"></script>
 </body>
 </html>
