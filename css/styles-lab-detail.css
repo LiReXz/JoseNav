@@ -102,24 +102,24 @@ body.scrolled .breadcrumb {
   transition: all 0.3s ease;
 }
 
-.github-link {
+.lab-links .github-link {
   background: #24292e;
   color: white;
 }
 
-.github-link:hover {
+.lab-links .github-link:hover {
   background: #1a1e22;
   transform: translateY(-2px);
 }
 
 /* Light mode GitHub link for better contrast */
-.light-mode .github-link {
+.light-mode .lab-links .github-link {
   background: #24292e;
   color: white;
   border: 2px solid #24292e;
 }
 
-.light-mode .github-link:hover {
+.light-mode .lab-links .github-link:hover {
   background: #1a1e22;
   border: 2px solid #1a1e22;
   transform: translateY(-2px);
@@ -149,7 +149,7 @@ body.scrolled .breadcrumb {
 
 /* Light mode demo link */
 .light-mode .demo-link {
-  background: linear-gradient(135deg, #7fff00 0%, #32cd32 100%);
+  background: linear-gradient(135deg, #F4A261 0%, #E8925D 100%);
   color: #000;
   border: 2px solid transparent;
   font-family: 'Roboto', sans-serif;
@@ -157,12 +157,12 @@ body.scrolled .breadcrumb {
   font-size: 1rem;
   letter-spacing: 0.5px;
   text-shadow: none;
-  box-shadow: 0 4px 12px rgba(127, 255, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(244, 162, 97, 0.2);
 }
 
 .light-mode .demo-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(127, 255, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(244, 162, 97, 0.4);
 }
 
 /* Version Management & Automation Styles */
@@ -592,6 +592,84 @@ body.scrolled .breadcrumb {
   color: white;
 }
 
+/* Collaboration-specific styles */
+.collaboration-note {
+  background: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.dark-mode .collaboration-note {
+  background: #2a2a2a;
+  border-left: 4px solid #7fff00;
+}
+
+.light-mode .collaboration-note {
+  background: #f8f9fa;
+  border-left: 4px solid #F4A261;
+}
+
+.collaboration-note h3 {
+  margin-bottom: 1rem;
+}
+
+.dark-mode .collaboration-note h3 {
+  color: #7fff00;
+}
+
+.light-mode .collaboration-note h3 {
+  color: #F4A261;
+}
+
+.collaboration-note a {
+  text-decoration: none;
+}
+
+.dark-mode .collaboration-note a {
+  color: #7fff00;
+}
+
+.light-mode .collaboration-note a {
+  color: #F4A261;
+}
+
+.collaboration-note a:hover {
+  text-decoration: underline;
+}
+
+.collaboration-robot-icon {
+  font-size: 8rem;
+}
+
+.dark-mode .collaboration-robot-icon {
+  color: #7fff00;
+}
+
+.light-mode .collaboration-robot-icon {
+  color: #F4A261;
+}
+
+.implementation-label {
+  font-size: 0.8em;
+}
+
+.dark-mode .implementation-label {
+  color: #7fff00;
+}
+
+.light-mode .implementation-label {
+  color: #F4A261;
+}
+
+.dark-mode .mkgf-label {
+  color: #7fff00;
+}
+
+.light-mode .mkgf-label {
+  color: #F4A261;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .lab-header-content {
@@ -797,3 +875,5 @@ body.scrolled .breadcrumb {
   background: rgba(0, 0, 0, 0.1);
   color: #E74C3C;
 }
+
+

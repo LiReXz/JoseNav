@@ -80,13 +80,13 @@
                         <i class="fab fa-github"></i> Mi Repositorio de Colaboraciones
                     </a>
                     <a href="https://github.com/MKGF" target="_blank" class="lab-link github-link">
-                        <i class="fab fa-github"></i> Organización MKGF
+                        <i class="fab fa-github"></i> MKGF GitHub
                     </a>
                 </div>
             </div>
             <div class="lab-header-media">
                 <div class="collaboration-diagram">
-                    <i class="fas fa-robot" style="font-size: 8rem; color: #7B42BC;"></i>
+                    <i class="fas fa-robot" class="collaboration-robot-icon"></i>
                 </div>
             </div>
         </div>
@@ -98,33 +98,33 @@
     <!-- Overview Section -->
     <div class="lab-section">
         <h2 class="section-title">🤝 Resumen de la Colaboración</h2>
-        <div class="collaboration-note" style="background: #2a2a2a; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid #7fff00;">
-            <h3 style="color: #7fff00; margin-bottom: 1rem;">
+        <div class="collaboration-note" class="collaboration-note">
+            <h3 >
                 <i class="fas fa-info-circle"></i> Atribución del Proyecto
             </h3>
             <p style="margin-bottom: 0.5rem;">
-                <strong>Proyecto Original:</strong> Bot de Discord Ranky por <a href="https://github.com/MKGF" target="_blank" style="color: #7fff00;">Equipo MKGF</a>
+                <strong>Proyecto Original:</strong> Bot de Discord Ranky por <a href="https://github.com/MKGF" target="_blank" >MKGF</a>
             </p>
             <p style="margin-bottom: 0.5rem;">
-                <strong>Aplicación en Vivo:</strong> <a href="https://ranky.top" target="_blank" style="color: #7fff00;">ranky.top</a>
+                <strong>Aplicación en Vivo:</strong> <a href="https://ranky.top" target="_blank" >ranky.top</a>
             </p>
             <p style="margin-bottom: 0.5rem;">
                 <strong>Mi Contribución:</strong> Implementación completa de DevOps y automatización de infraestructura
             </p>
             <p style="margin-bottom: 0;">
-                <strong>Repositorio:</strong> Disponible en mi <a href="https://github.com/LiReXz/Collaborations" target="_blank" style="color: #7fff00;">repositorio de Colaboraciones</a>
+                <strong>Repositorio:</strong> Disponible en mi <a href="https://github.com/LiReXz/Collaborations" target="_blank" >repositorio de Colaboraciones</a>
             </p>
         </div>
         
         <p class="section-content">
-            Esta colaboración involucró implementar una solución completa de infraestructura AWS para el proyecto de bot de Discord de MKGF. 
+            Esta colaboración consistió en implementar una solución completa de infraestructura AWS para el proyecto de bot de Discord de MKGF. 
             Ranky es un sistema de ranking personalizado de League of Legends que permite a las comunidades gaming crear 
-            experiencias competitivas personalizadas más allá de los sistemas de ranking tradicionales.
+            experiencias competitivas personalizadas que van más allá de los sistemas de ranking tradicionales.
         </p>
         <p class="section-content">
-            <strong>Mi contribución específica se enfocó en:</strong> Diseñar e implementar toda la 
+            <strong>Mi contribución específica se centró en:</strong> Diseñar e implementar toda la 
             infraestructura AWS con Terraform, crear pipelines CI/CD para despliegue automatizado, containerizar 
-            la aplicación con Docker, y optimizar todo para uso de AWS Free Tier con gestión de ciclo de vida sin costos.
+            la aplicación con Docker, y optimizar todo para el uso de AWS Free Tier con gestión del ciclo de vida sin costos adicionales.
         </p>
     </div>
 
@@ -135,7 +135,7 @@
         <h2 class="section-title">🏗️ Implementación DevOps</h2>
         <div class="content-grid">
             <div class="content-card">
-                <h3>Aplicación Existente <small style="color: #888;">(Trabajo de MKGF)</small></h3>
+                <h3>Aplicación Existente <small class="mkgf-label">(Trabajo de MKGF)</small></h3>
                 <ul>
                     <li><strong>Framework:</strong> Spring Boot 3.2.5</li>
                     <li><strong>Lenguaje:</strong> Java 17</li>
@@ -145,7 +145,7 @@
                 </ul>
             </div>
             <div class="content-card">
-                <h3>Infraestructura AWS <small style="color: #7B42BC;">(Mi Implementación)</small></h3>
+                <h3>Infraestructura AWS <small class="implementation-label">(Mi Implementación)</small></h3>
                 <ul>
                     <li><strong>Cómputo:</strong> EC2 con Docker</li>
                     <li><strong>Registro de Contenedores:</strong> ECR</li>
@@ -392,7 +392,16 @@ ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=secret"]</code>
         </div>
     </div>
 
-    <div style="height: 6rem;"></div>
+    <div style="height: 4rem;"></div>
+    
+    <!-- Back Navigation -->
+    <div class="back-navigation">
+        <a href="../collaborations.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver a Colaboraciones
+        </a>
+    </div>
+    
+    <div style="height: 4rem;"></div>
 
     <footer class="footer">
         <div class="footer-content">
@@ -411,3 +420,4 @@ ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=secret"]</code>
     <script src="../../scripts/tag-sorter.js"></script>
 </body>
 </html>
+

@@ -449,29 +449,29 @@ body.light-mode {
   .footer-links {
     display: flex;
     gap: 2rem;
-    align-items: flex-end; /* Los enlaces estarán alineados al extremo derecho */
-    margin-right: 6rem; /* Márgenes de separación a la derecha */
+    align-items: center;
+    margin-right: 2rem;
     font-size: clamp(1rem, 1.2vw, 1.15rem);
   }
   
   .dark-mode .github-link, .dark-mode .email-link {
-    color: white;/* Color del enlace */
-    text-decoration: underline; /* Elimina subrayado */
-    font-weight: bold; /* Negrita en el texto */
-    margin-bottom: 0.5rem; /* Espacio entre los enlaces */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
   }
   
   .light-mode .github-link, .light-mode .email-link {
-    color: #000000;/* Color del enlace en light mode */
-    text-decoration: underline; /* Elimina subrayado */
-    font-weight: bold; /* Negrita en el texto */
-    margin-bottom: 0.5rem; /* Espacio entre los enlaces */
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
   }
   
   .dark-mode .github-link:hover, .dark-mode .email-link:hover {
-    color: #7fff00; /* Color al pasar el ratón */
+    color: #7fff00;
   }
   
   .light-mode .github-link:hover, .light-mode .email-link:hover {
-    color: #F4A261; /* Color al pasar el ratón en light mode */
+    color: #F4A261;
   }

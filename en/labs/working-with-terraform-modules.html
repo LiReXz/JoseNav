@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Terraform Modules - José Navarro Pavón</title>
+    <link id="favicon" rel="icon" href="../../media/logo-url-dark.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/styles-generic.css">
+    <link rel="stylesheet" href="../../css/styles-labs.css">
+    <link rel="stylesheet" href="../../css/styles-lab-detail.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark-mode">
+    <header id="header">
+        <a href="../index.html" class="logo-link">
+            <img src="../../media/logo-url-dark.png" class="logo">
+        </a>
+        <div class="header-buttons"> 
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../laboratories.html">Laboratories</a></li>
+                    <li><a href="../collaborations.html">Collaborations</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-toggle-container">
+                <span class="language-option" data-lang="en">EN</span>
+                <span class="language-separator">|</span>
+                <span class="language-option active" data-lang="es">ES</span>
+            </div>
+            <div class="theme-toggle-container">
+                <i class="fas fa-sun sun-icon"></i>
+                <div class="moving-bar" id="toggle-bar">
+                  <div class="slider-point"></div>
+                </div>
+                <i class="fas fa-moon moon-icon"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <a href="../laboratories.html">Laboratories</a> 
+        <span class="breadcrumb-separator">></span>
+        <span class="breadcrumb-current">Working with Terraform Modules</span>
+    </div>
+    
+    <div style="height: 2rem;"></div>
+    
+    <!-- Lab Header -->
+    <div class="lab-header">
+        <div class="lab-header-content">
+            <div class="lab-header-info">
+                <h1 class="lab-main-title">Working with Terraform Modules</h1>
+                <p class="lab-main-description">
+                    Learn to organize your Terraform code using modules for better structure and reusability. 
+                    This guide covers the basics of creating and using modules for AWS infrastructure.
+                </p>
+                <div class="lab-main-tech-tags">
+                    <span class="tag-terraform">Terraform</span>
+                    <span class="tag-aws">AWS</span>
+                </div>
+                <div class="lab-links">
+                    <a href="https://github.com/LiReXz/How-to-work-with-Terraform-Modules" target="_blank" class="lab-link github-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="lab-header-media">
+                <div class="terraform-diagram">
+                    <i class="fas fa-cubes" style="font-size: 8rem; color: #7B42BC;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 4rem;"></div>
+    
+    <!-- Overview Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🔍 What You'll Learn</h2>
+        <div class="content-grid">
+            <div class="content-card">
+                <h3>Basic Concepts</h3>
+                <ul>
+                    <li><strong>What are Modules</strong> - Understanding the concept of modules in Terraform</li>
+                    <li><strong>Project Structure</strong> - How to organize your Terraform files</li>
+                    <li><strong>Simple Examples</strong> - Basic compute, network, and IAM modules</li>
+                    <li><strong>Variables</strong> - How to pass data between modules</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <h3>Practical Example</h3>
+                <ul>
+                    <li><strong>Network Module:</strong> Create VPCs and subnets</li>
+                    <li><strong>Compute Module:</strong> Configure EC2 instances</li>
+                    <li><strong>IAM Module:</strong> Manage access and permissions</li>
+                    <li><strong>Connect Everything:</strong> Link modules together</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Architecture Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🏗️ Module Architecture</h2>
+        <div class="architecture-flow">
+            <div class="flow-step">
+                <div class="flow-icon">⚙️</div>
+                <h4>1. Root Module</h4>
+                <p>Main configuration with provider and module declarations</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon">🔐</div>
+                <h4>2. IAM Module</h4>
+                <p>Identity and access management resources</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon">🌐</div>
+                <h4>3. Network Module</h4>
+                <p>VPCs, subnets, security groups, routing</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon">💻</div>
+                <h4>4. Compute Module</h4>
+                <p>EC2 instances, load balancers, templates</p>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Project Structure Section -->
+    <div class="lab-section">
+        <h2 class="section-title">📁 Project Structure</h2>
+        <div class="code-block">
+            <pre><code>terraform-modules/
+├── main.tf                    # Root module configuration
+├── variables.tf               # Root variables
+├── compute/                   # Compute resource module
+│   ├── inputs.tf             # Module input variables
+│   ├── main.tf               # Module dependencies
+│   ├── instances.tf          # EC2 instances
+│   ├── launch_templates.tf   # Launch templates
+│   ├── load_balancing.tf     # Load balancers
+│   ├── lambda.tf             # Lambda functions
+│   └── locals.tf             # Local variables
+├── network/                   # Network resource module
+│   ├── outputs.tf            # Module outputs
+│   ├── vpcs.tf               # VPC definitions
+│   ├── subnets.tf            # Subnet configurations
+│   ├── route_tables.tf       # Route tables
+│   ├── security_groups.tf    # Security groups
+│   ├── internet_gateway.tf   # Internet gateways
+│   ├── elastic_ips.tf        # Elastic IP addresses
+│   └── network_interfaces.tf # Network interfaces
+└── iam/                       # IAM resource module
+    ├── iam_roles.tf          # IAM roles and policies
+    ├── key_pair.tf           # EC2 key pairs
+    └── outputs.tf            # Module outputs</code></pre>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Setup Guide Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🚀 Setup Guide</h2>
+        
+        <div class="setup-section">
+            <h3>Prerequisites</h3>
+            <div class="checklist">
+                <div class="checklist-item">✅ AWS account with appropriate permissions</div>
+                <div class="checklist-item">✅ Terraform installed (v1.0+)</div>
+                <div class="checklist-item">✅ AWS CLI configured</div>
+                <div class="checklist-item">✅ Basic understanding of AWS services</div>
+            </div>
+        </div>
+        
+        <div class="setup-section">
+            <h3>1. Clone Repository</h3>
+            <div class="code-block">
+                <pre><code>git clone https://github.com/LiReXz/How-to-work-with-Terraform-Modules.git
+cd How-to-work-with-Terraform-Modules</code></pre>
+            </div>
+        </div>
+        
+        <div class="setup-section">
+            <h3>2. Configure AWS Credentials</h3>
+            <p>Update the <strong>variables.tf</strong> file with your AWS credentials:</p>
+            <div class="code-block">
+                <pre><code>variable "region" {
+    type = string
+    default = "us-east-1"  # Your preferred region
+}
+
+variable "accessKey" {
+    type = string
+    default = "YOUR_ACCESS_KEY"
+}
+
+variable "secretKey" {
+    type = string
+    default = "YOUR_SECRET_KEY"
+}</code></pre>
+            </div>
+        </div>
+        
+        <div class="setup-section">
+            <h3>3. Initialize Terraform</h3>
+            <div class="code-block">
+                <pre><code># Initialize Terraform and download providers
+terraform init
+
+# Validate the configuration
+terraform validate
+
+# Plan the deployment
+terraform plan</code></pre>
+            </div>
+        </div>
+        
+        <div class="setup-section">
+            <h3>4. Deploy Infrastructure</h3>
+            <div class="code-block">
+                <pre><code># Apply the configuration
+terraform apply
+
+# Confirm with 'yes' when prompted
+
+# To destroy resources when done
+terraform destroy</code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Module Details Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🔧 Module Implementation</h2>
+        
+        <div class="module-section">
+            <h3>Root Module (main.tf)</h3>
+            <p>The root module orchestrates all other modules and manages dependencies:</p>
+            <div class="code-block">
+                <pre><code># Provider configuration
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = var.region
+  access_key = var.accessKey
+  secret_key = var.secretKey
+}
+
+# Module declarations with dependencies
+module "iam" {
+    source = "./iam"
+}
+
+module "network" {
+    source = "./network"
+}
+
+module "compute" {
+    source = "./compute"
+    depends_on = [module.iam, module.network]
+    
+    # Variable transfer from other modules
+    key-pair-example1 = module.iam.key-pair-example1
+    example1-vpc-id = module.network.example1-vpc-id
+    example1-subnet-id = module.network.example1-subnet-id
+}</code></pre>
+            </div>
+        </div>
+        
+        <div class="module-section">
+            <h3>Variable Transfer Process</h3>
+            <p>Learn how to pass variables between modules:</p>
+            
+            <div class="variable-step">
+                <h4>Step 1: Define Outputs (Source Module)</h4>
+                <div class="code-block">
+                    <pre><code># network/outputs.tf
+output "example1-vpc-id" {
+    value = aws_vpc.example1-vpc.id
+    description = "Example VPC ID"
+}
+
+output "example1-subnet-id" {
+    value = aws_subnet.example1-subnet.id
+    description = "Example subnet ID"
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="variable-step">
+                <h4>Step 2: Define Inputs (Target Module)</h4>
+                <div class="code-block">
+                    <pre><code># compute/inputs.tf
+variable "example1-vpc-id" {
+    description = "VPC ID from network module"
+    type = string
+}
+
+variable "example1-subnet-id" {
+    description = "Subnet ID from network module"
+    type = string
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="variable-step">
+                <h4>Step 3: Connect Variables (Root Module)</h4>
+                <div class="code-block">
+                    <pre><code># main.tf - Variable transfer
+module "compute" {
+    source = "./compute"
+    depends_on = [module.network]
+    
+    example1-vpc-id = module.network.example1-vpc-id
+    example1-subnet-id = module.network.example1-subnet-id
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Best Practices Section -->
+    <div class="lab-section">
+        <h2 class="section-title">💡 Best Practices</h2>
+        
+        <div class="best-practices-grid">
+            <div class="practice-card">
+                <h4>🗂️ File Organization</h4>
+                <ul>
+                    <li>Separate resources by type (compute, network, IAM)</li>
+                    <li>Use descriptive names (instances.tf, security_groups.tf)</li>
+                    <li>Keep main.tf for dependencies only</li>
+                    <li>Use locals.tf for module-specific variables</li>
+                </ul>
+            </div>
+            
+            <div class="practice-card">
+                <h4>🔄 Module Dependencies</h4>
+                <ul>
+                    <li>Use explicit <code>depends_on</code> declarations</li>
+                    <li>Avoid circular dependencies between modules</li>
+                    <li>Plan execution order (IAM → Network → Compute)</li>
+                    <li>Test dependencies with <code>terraform graph</code></li>
+                </ul>
+            </div>
+            
+            <div class="practice-card">
+                <h4>📝 Variable Naming</h4>
+                <ul>
+                    <li>Use descriptive and consistent naming conventions</li>
+                    <li>Include resource type in variable names</li>
+                    <li>Document all variables with descriptions</li>
+                    <li>Use appropriate variable types (string, number, list)</li>
+                </ul>
+            </div>
+            
+            <div class="practice-card">
+                <h4>🔐 Security Considerations</h4>
+                <ul>
+                    <li>Never hardcode sensitive credentials</li>
+                    <li>Use AWS IAM roles when possible</li>
+                    <li>Implement least privilege principles</li>
+                    <li>Store state files securely (S3 backend recommended)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 3rem;"></div>
+    
+    <!-- Troubleshooting Section -->
+    <div class="lab-section">
+        <h2 class="section-title">🔧 Troubleshooting</h2>
+        
+        <div class="troubleshooting-section">
+            <div class="issue-item">
+                <h4>Common Issue: Module Not Found</h4>
+                <p><strong>Error:</strong> <code>Module not found: ./compute</code></p>
+                <p><strong>Solution:</strong> Ensure the module path is correct and run <code>terraform init</code> to initialize modules.</p>
+            </div>
+            
+            <div class="issue-item">
+                <h4>Common Issue: Circular Dependencies</h4>
+                <p><strong>Error:</strong> <code>Cycle: module.compute, module.network</code></p>
+                <p><strong>Solution:</strong> Review and remove circular dependencies. Use <code>terraform graph</code> to visualize dependencies.</p>
+            </div>
+            
+            <div class="issue-item">
+                <h4>Common Issue: Variable Not Defined</h4>
+                <p><strong>Error:</strong> <code>Variable "example1-vpc-id" not declared</code></p>
+                <p><strong>Solution:</strong> Ensure the variable is declared in <code>inputs.tf</code> of the target module.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div style="height: 4rem;"></div>
+    
+    <!-- Back Navigation -->
+    <div class="back-navigation">
+        <a href="../laboratories.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Laboratories
+        </a>
+    </div>
+    
+    <div style="height: 4rem;"></div>
+
+    <script src="../../scripts/theme.js"></script>
+    <script src="../../scripts/language-toggle.js"></script>
+    <script src="../../scripts/scroll.js"></script>
+    <script src="../../scripts/lab-detail.js"></script>
+    <script src="../../scripts/tag-sorter.js"></script>
+</body>
+</html>
