@@ -28,10 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const sunPosition = 2.5;  // Posición para modo claro
   const moonPosition = 17;  // Posición para modo oscuro
   
-  // Auto-detect media path based on current URL depth
-  const pathDepth = window.location.pathname.split('/').filter(part => part !== '').length;
-  const isInSubfolder = pathDepth > 1 || window.location.pathname.includes('/labs/');
-  const mediaPath = isInSubfolder ? '../../media/' : '../media/';
+  // Usa ruta absoluta para media en GitHub Pages y local
+  // Detecta si está en GitHub Pages
+  const repoName = 'JoseNav'; // Cambia si tu repo tiene otro nombre
+  let mediaPath;
+  if (window.location.hostname.endsWith('github.io')) {
+    mediaPath = `/${repoName}/media/`;
+  } else {
+    mediaPath = '../media/';
+  }
   
   console.log('🔍 Path Detection:');
   console.log(`   URL: ${window.location.pathname}`);
