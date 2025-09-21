@@ -28,14 +28,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const sunPosition = 2.5;  // Posición para modo claro
   const moonPosition = 17;  // Posición para modo oscuro
   
-  // Usa ruta absoluta para media en GitHub Pages y local
-  // Detecta si está en GitHub Pages
+  // Usa ruta absoluta para media en GitHub Pages y relativa en local
   const repoName = 'JoseNav'; // Cambia si tu repo tiene otro nombre
   let mediaPath;
   if (window.location.hostname.endsWith('github.io')) {
     mediaPath = `/${repoName}/media/`;
   } else {
-    mediaPath = '../media/';
+    // Detecta si está en una subcarpeta (por ejemplo, en /en/ o /es/)
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    if (pathParts.length > 2) {
+      mediaPath = '../../media/';
+    } else {
+      mediaPath = '../media/';
+    }
   }
   
   console.log('🔍 Path Detection:');
