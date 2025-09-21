@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const moonIcon = document.querySelector('.moon-icon');
   
   // Configuración de posiciones del slider
-  const sunPosition = 2.5;  // Posición para modo claro
-  const moonPosition = 17;  // Posición para modo oscuro
+  const sunPositionRem = 0.2;  // Posición para modo claro (rem)
+  const moonPositionRem = 1;   // Posición para modo oscuro (rem)
   
   // Usa ruta absoluta para media en GitHub Pages y relativa en local
   const repoName = 'JoseNav'; // Cambia si tu repo tiene otro nombre
@@ -67,12 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  // Función para calcular posición en rem
-  const calculatePositionInRem = (positionPx) => {
-    const baseWidth = 1920;
-    return (positionPx / baseWidth) * 100;
-  };
-
   // Función para actualizar todos los assets del tema
   const updateThemeAssets = () => {
     const isDarkMode = body.classList.contains('dark-mode');
@@ -109,9 +103,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Actualizar posición del slider
     if (sliderPoint) {
       if (isDarkMode) {
-        sliderPoint.style.left = `${calculatePositionInRem(moonPosition)}rem`;
+        sliderPoint.style.left = `${moonPositionRem}rem`;
       } else {
-        sliderPoint.style.left = `${calculatePositionInRem(sunPosition)}rem`;
+        sliderPoint.style.left = `${sunPositionRem}rem`;
       }
       console.log('✅ Slider position updated to:', sliderPoint.style.left);
     }
@@ -127,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('theme-mode', 'light');
       
       if (sliderPoint) {
-        sliderPoint.style.left = `${calculatePositionInRem(sunPosition)}rem`;
+        sliderPoint.style.left = `${sunPositionRem}rem`;
       }
     } else {
       body.classList.remove('light-mode');
@@ -135,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('theme-mode', 'dark');
       
       if (sliderPoint) {
-        sliderPoint.style.left = `${calculatePositionInRem(moonPosition)}rem`;
+        sliderPoint.style.left = `${moonPositionRem}rem`;
       }
     }
     
