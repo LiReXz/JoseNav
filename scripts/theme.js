@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const moonIcon = document.querySelector('.moon-icon');
   
   // Configuración de posiciones del slider
-  const sunPositionRem = 0.1;  // Posición para modo claro (rem, extremo izquierdo)
+  const sunPositionRem = 0.01;  // Posición para modo claro (rem, más cerca del sol)
   const moonPositionRem = 1;   // Posición para modo oscuro (rem, extremo derecho)
   
   // Usa ruta absoluta para media en GitHub Pages y relativa en local
