@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('🔍 Path Detection:');
   console.log(`   URL: ${window.location.pathname}`);
   console.log(`   Media path: ${mediaPath}`);
-  console.log(`   Is in subfolder: ${isInSubfolder}`);
 
   // Assets paths
   const assets = {
